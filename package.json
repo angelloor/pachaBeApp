@@ -1,0 +1,23 @@
+{
+	"name": "pachaWebApp",
+	"version": "1.0.0",
+	"description": "aplicación web para el proyecto Pacha App",
+	"main": "index.js",
+	"scripts": {
+		"server": "nodemon api/server.js"
+	},
+	"keywords": [
+		"Pachamana",
+		"Conciencia",
+		"Ambiental",
+		"Medio Ambiente"
+	],
+	"author": "Angel Miguel Loor Manzano (@codersgt.ec)",
+	"license": "MIT",
+	"dependencies": {
+		"body-parser": "^1.19.0",
+		"express": "^4.17.1",
+		"mongoose": "^5.12.0",
+		"nodemon": "^2.0.7"
+	}
+}
