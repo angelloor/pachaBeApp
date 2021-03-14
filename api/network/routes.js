@@ -1,7 +1,7 @@
 const message = require('../components/message/network')
 
-const routes = (server) => {
-    server.use('/message', message);
+const routes = (app) => {
+    app.use('/message', message);
 }
 
 module.exports = routes
