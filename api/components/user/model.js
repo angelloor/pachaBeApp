@@ -3,10 +3,6 @@ const mongoose = require('mongoose')
 const Schema = mongoose.Schema;
 
 const mySchema = new Schema({
-    id: {
-        type: ObjectId,
-        required: false
-    },
     numberID: {
         type: String,
         required: true
@@ -16,7 +12,7 @@ const mySchema = new Schema({
         required: true
     },
     birdOfDate: {
-        type: Date,
+        type: String,
         required: true
     },
     email: {
@@ -24,7 +20,7 @@ const mySchema = new Schema({
         required: true
     },
     phone: {
-        type: Number,
+        type: String,
         required: true
     },
     password: {
@@ -32,21 +28,17 @@ const mySchema = new Schema({
         required: true
     },
     registerOfDate: {
-        type: Date,
+        type: String,
         required: true
     },
     coint: {
         type: Number,
         required: false,
-        default: 0
+        default: 0,
     },
     experience: {
-        type: number,
-        default: 0
-    },
-    dailyActivity: {
         type: Number,
-        required: false,
+        default: 0,
     },
     imageUrl: {
         type: String,

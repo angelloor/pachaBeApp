@@ -3,10 +3,6 @@ const mongoose = require('mongoose')
 const Schema = mongoose.Schema;
 
 const mySchema = new Schema({
-    id: {
-        type: ObjectId,
-        required: true
-    },
     dailyActivity: {
         type: Number,
         required: true,

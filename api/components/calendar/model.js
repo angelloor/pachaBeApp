@@ -3,11 +3,11 @@ const mongoose = require('mongoose')
 const Schema = mongoose.Schema;
 
 const mySchema = new Schema({
-    id: {
-        type: ObjectId,
-        required: true
+    dayText: {
+        type: String,
+        required: true,
     },
-    day: {
+    dayCelebrate: {
         type: String,
         required: true,
     },
@@ -20,6 +20,7 @@ const mySchema = new Schema({
         defaul: ''
     },
     categoryId: {
+        type: Schema.Types.ObjectId,
         ref: 'Category'
     }
 

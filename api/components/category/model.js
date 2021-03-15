@@ -3,21 +3,13 @@ const mongoose = require('mongoose')
 const Schema = mongoose.Schema;
 
 const mySchema = new Schema({
-    id: {
-        type: ObjectId,
-        required: true
-    },
     name: {
         type: String,
         required: true,
     },
     colorPosition: {
-        start: {
-            type: String
-        },
-        end: {
-            type: String
-        }
+        type: Array,
+        required: true,
     },
     imageUrl: {
         type: String,
