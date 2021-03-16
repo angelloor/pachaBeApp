@@ -7,7 +7,7 @@ addUser = (numberID, names, birdOfDate, email, phone, password, coint, experienc
             reject("No se ha recibido todos los datos");
             return false;
         }
-        const date = nowDate();
+        const date = nowDate()
 
         const userAdd = {
             numberID,

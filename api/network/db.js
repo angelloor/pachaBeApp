@@ -1,7 +1,7 @@
 const db = require('mongoose')
 
 if (process.env.NODE_ENV !== 'production') {
-    require('dotenv').config();
+    require('dotenv').config()
 }
 
 const Connect = () => {

@@ -3,29 +3,27 @@ const mongoose = require('mongoose')
 const Schema = mongoose.Schema;
 
 const mySchema = new Schema({
-    id: {
-        type: ObjectId,
-        required: true
-    },
     itemId: {
+        type: Schema.Types.ObjectId,
         ref: 'StoreItem'
     },
     userId: {
+        type: Schema.Types.ObjectId,
         ref: 'User'
     },
     shoppingDate: {
-        type: Date,
+        type: String,
         required: true,
-        default: new Date()
     },
     deliveryDate: {
-        type: Date,
+        type: String,
         required: false,
+        default: ''
     },
     deliveryStatus: {
         type: Boolean,
         required: false,
-        default: falzse
+        default: false
     }
 })
 
