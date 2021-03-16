@@ -4,7 +4,7 @@
 	"description": "BackEnd para el proyecto Pacha App",
 	"main": "index.js",
 	"scripts": {
-		"server": "nodemon api/server.js"
+		"server": "nodemon src/server.js"
 	},
 	"keywords": [
 		"Pachamana",
