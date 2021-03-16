@@ -14,7 +14,6 @@ router.post('/', (req, res) => {
 })
 
 router.get('/', (req, res) => {
-    console.log(req.query.idNews)
     const filterNews = req.query.idNews || null
     controller.getNews(filterNews)
         .then((news) => {

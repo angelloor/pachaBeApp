@@ -14,7 +14,6 @@ router.post('/', (req, res) => {
 })
 
 router.get('/', (req, res) => {
-    console.log(req.query.idChallenge)
     const filterChallenge = req.query.idChallenge || null
     controller.getChallenge(filterChallenge)
         .then((challenge) => {

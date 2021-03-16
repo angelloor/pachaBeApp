@@ -8,6 +8,9 @@ const yourShopping = require('../components/yourShopping/network')
 const funFacts = require('../components/funFacts/network')
 const challenge = require('../components/challenge/network')
 const funFactsUser = require('../components/funFactsUser/network')
+const challengeUser = require('../components/challengeUser/network')
+const course = require('../components/course/network')
+const topics = require('../components/topics/network')
 
 
 const routes = (app) => {
@@ -16,12 +19,14 @@ const routes = (app) => {
     app.use('/calendar', calendar)
     app.use('/configuration', configuration)
     app.use('/news', news)
-    app.use('/storeitem', storeItem)
-    app.use('/yourshopping', yourShopping)
-    app.use('/funfacts', funFacts)
+    app.use('/storeItem', storeItem)
+    app.use('/yourShopping', yourShopping)
+    app.use('/funFacts', funFacts)
     app.use('/challenge', challenge)
-    app.use('/funfactsuser', funFactsUser)
-
+    app.use('/funFactsUser', funFactsUser)
+    app.use('/challengeUser', challengeUser)
+    app.use('/course', course)
+    app.use('/topics', topics)
 }
 
 module.exports = routes

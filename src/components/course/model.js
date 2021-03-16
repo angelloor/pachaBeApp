@@ -14,11 +14,6 @@ const mySchema = new Schema({
     categoryId: {
         type: Schema.Types.ObjectId,
         ref: 'Category'
-    },
-    status: {
-        type: Boolean,
-        required: false,
-        default: false
     }
 })
 

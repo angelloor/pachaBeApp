@@ -14,7 +14,6 @@ router.post('/', (req, res) => {
 })
 
 router.get('/', (req, res) => {
-    console.log(req.query.idConfiguration)
     const filterConfiguration = req.query.idConfiguration || null
     controller.getConfiguration(filterConfiguration)
         .then((configuration) => {

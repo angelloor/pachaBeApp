@@ -25,7 +25,6 @@ router.post('/', (req, res) => {
 
 router.get('/', (req, res) => {
     const filterUser = req.query.idUser || null
-    console.log(filterUser)
     controllerUser.getUser(filterUser)
         .then((user) => {
             response.success(req, res, user, 200)

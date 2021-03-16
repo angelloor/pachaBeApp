@@ -14,7 +14,6 @@ router.post('/', (req, res) => {
 })
 
 router.get('/', (req, res) => {
-    console.log(req.query.idStoreItem)
     const filterStoreItem = req.query.idStoreItem || null
     controller.getStoreItem(filterStoreItem)
         .then((storeItem) => {

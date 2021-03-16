@@ -14,7 +14,6 @@ router.post('/', (req, res) => {
 })
 
 router.get('/', (req, res) => {
-    console.log(req.query.idCalendar)
     const filterCalendar = req.query.idCalendar || null
     controller.getCalendar(filterCalendar)
         .then((calendar) => {

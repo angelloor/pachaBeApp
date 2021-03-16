@@ -14,7 +14,6 @@ router.post('/', (req, res) => {
 })
 
 router.get('/', (req, res) => {
-    console.log(req.query.idFunFacts)
     const filterFunFacts = req.query.idFunFacts || null
     controller.getFunFacts(filterFunFacts)
         .then((funFacts) => {

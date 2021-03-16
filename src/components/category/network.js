@@ -14,7 +14,6 @@ router.post('/', (req, res) => {
 })
 
 router.get('/', (req, res) => {
-    console.log(req.query.name)
     const filterCategory = req.query.name || null
     controller.getCategory(filterCategory)
         .then((category) => {

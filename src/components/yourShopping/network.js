@@ -14,7 +14,6 @@ router.post('/', (req, res) => {
 })
 
 router.get('/', (req, res) => {
-    console.log(req.query.idYourShopping)
     const filterYourShopping = req.query.idYourShopping || null
     controller.getYourShopping(filterYourShopping)
         .then((yourShopping) => {

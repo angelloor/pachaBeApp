@@ -16,11 +16,6 @@ const mySchema = new Schema({
         ref: 'Course',
         required: true,
     },
-    statusFinish: {
-        type: Boolean,
-        required: false,
-        default: false
-    },
     question: {
         type: String,
         required: true,
