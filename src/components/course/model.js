@@ -13,10 +13,8 @@ const mySchema = new Schema({
     },
     categoryId: {
         type: Schema.Types.ObjectId,
-        ref: 'Category'
+        ref: 'category'
     }
-})
+}, { collection: 'course' })
 
-const Course = mongoose.model('Course', mySchema)
-
-module.exports = Course
+module.exports = mongoose.model('course', mySchema)

@@ -1,0 +1,87 @@
+[
+	"parametros: email",
+	{
+		"user": {
+			"names": "",
+			"birdOfDate": "",
+			"coint": "",
+			"experience": "",
+			"imageUrl": ""
+		},
+		"birthday": false,
+		"courses": [
+			{
+				"name": "",
+				"description": "",
+				"colorPosition": [],
+				"imageUrl": "",
+				"topic": [
+					{
+						"name": "",
+						"content": [],
+						"question": "",
+						"answers": "",
+						"correctAnswer": "",
+						"reward": {
+							"experiencie": "",
+							"coint": ""
+						}
+					}
+				]
+			}
+		],
+		"challenges": [
+			{
+				"name": "",
+				"colorPosition": [],
+				"imageUrl": "",
+				"description": "",
+				"shortDescription": "",
+				"reward": {
+					"experiencie": "",
+					"coint": ""
+				},
+				"ambientalImpact": ""
+			}
+		],
+		"storeItem": [
+			{
+				"title": "",
+				"description": "",
+				"price": "",
+				"urlImage": ""
+			}
+		],
+		"calendar": [
+			{
+				"dayText": "",
+				"dayCelebrate": "",
+				"isCelebrated": "",
+				"description": "",
+				"colorPosition": [],
+				"imageUrl": ""
+			}
+		],
+		"noticias": [
+			{
+				"title": "",
+				"description": "",
+				"shortDescription": "",
+				"datePublished": "",
+				"imageUrl": ""
+			}
+		],
+		"configuration": {
+			"dailyActivity": "",
+			"socialLinks": {
+				"facebook": "",
+				"instagram": ""
+			},
+			"Links": {
+				"privacyPolicies": "",
+				"termsAndConditions": "",
+				"suport": ""
+			}
+		}
+	}
+]

@@ -9,7 +9,7 @@ const mySchema = new Schema({
     },
     categoryId: {
         type: Schema.Types.ObjectId,
-        ref: 'Category'
+        ref: 'category'
     },
     description: {
         type: String,
@@ -33,8 +33,6 @@ const mySchema = new Schema({
         type: String,
         required: true,
     }
-})
+}, { collection: 'challenge' })
 
-const Challenge = mongoose.model('Challenge', mySchema)
-
-module.exports = Challenge
+module.exports = mongoose.model('challenge', mySchema)

@@ -21,11 +21,8 @@ const mySchema = new Schema({
     },
     categoryId: {
         type: Schema.Types.ObjectId,
-        ref: 'Category'
+        ref: 'category'
     }
+}, { collection: 'calendar' })
 
-})
-
-const Calendar = mongoose.model('Calendar', mySchema)
-
-module.exports = Calendar
+module.exports = mongoose.model('calendar', mySchema)

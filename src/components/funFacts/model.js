@@ -7,8 +7,6 @@ const mySchema = new Schema({
         type: String,
         required: true
     }
-})
+}, { collection: 'funFacts' })
 
-const FunFacts = mongoose.model('FunFacts', mySchema)
-
-module.exports = FunFacts
+module.exports = mongoose.model('funFacts', mySchema)

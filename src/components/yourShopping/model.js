@@ -5,11 +5,11 @@ const Schema = mongoose.Schema
 const mySchema = new Schema({
     itemId: {
         type: Schema.Types.ObjectId,
-        ref: 'StoreItem'
+        ref: 'storeItem'
     },
     userId: {
         type: Schema.Types.ObjectId,
-        ref: 'User'
+        ref: 'user'
     },
     shoppingDate: {
         type: String,
@@ -25,8 +25,6 @@ const mySchema = new Schema({
         required: false,
         default: false
     }
-})
+}, { collection: 'yourShopping' })
 
-const YourShopping = mongoose.model('YourShopping', mySchema)
-
-module.exports = YourShopping
+module.exports = mongoose.model('yourShopping', mySchema)

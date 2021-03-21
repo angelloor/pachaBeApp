@@ -1,0 +1,142 @@
+[
+	{
+		"name": "Cierra bien los grifos",
+		"categoryId": "60515b472e2f413804ffbf19",
+		"description": "Mientras te lavas los dientes, te aseas o te afeitas, cierra el grifo de agua. (Fotografía al momento de cerrar el grifo)",
+		"reward": {
+			"experiencie": 100,
+			"coint": 100
+		},
+		"ambientalImpact": "Por cada minuto ahorrarás de 6 a 12 litros"
+	},
+	{
+		"name": "Recicla el Aceite",
+		"categoryId": "60515b472e2f413804ffbf19",
+		"description": "Vierte en un recipiente el aceite usado que te sobre y llévalo a reciclar. No lo tires nunca por la tubería. (Fotografía de reciclaje de aceite de cocina de forma personal)",
+		"reward": {
+			"experiencie": 100,
+			"coint": 100
+		},
+		"ambientalImpact": "Contribuyes a descontaminar 1000 L de agua por cada litro de aceite"
+	},
+	{
+		"name": "Riego de plantas",
+		"categoryId": "60515b472e2f413804ffbf19",
+		"description": "Utiliza el agua sobrante de los jarros de jugos y de lavar las verduras para regar las plantas. (Fotografía de preparación de regadera con agua reutilizable)",
+		"reward": {
+			"experiencie": 100,
+			"coint": 100
+		},
+		"ambientalImpact": "Aportas a la reducción del desperdicio de agua en tu ciudad"
+	},
+	{
+		"name": "Cambio de bombillos",
+		"categoryId": "60515b5d2e2f413804ffbf1a",
+		"description": "Utilizar focos de bajo consumo de energía. (Fotografía de iluminación de bajo consumo)",
+		"reward": {
+			"experiencie": 100,
+			"coint": 100
+		},
+		"ambientalImpact": "Ahorras hasta un 75 % de energía"
+	},
+	{
+		"name": "Utiliza Luz Natural",
+		"categoryId": "60515b5d2e2f413804ffbf1a",
+		"description": "Mantenga las luces apagadas durante el día, y opta por cortinas abiertas para que entre más luz. (Fotografía de espacios con luz natural en tu domicilio y/o trabajo)",
+		"reward": {
+			"experiencie": 100,
+			"coint": 100
+		},
+		"ambientalImpact": "Reduces el consumo de energía y planilla de luz"
+	},
+	{
+		"name": "Consumo Vampiro",
+		"categoryId": "60515b5d2e2f413804ffbf1a",
+		"description": "Desconecta los equipos y electrodomésticos aun cuando estén apagados. (Fotografía de equipos desconectados)",
+		"reward": {
+			"experiencie": 100,
+			"coint": 100
+		},
+		"ambientalImpact": "Reduces en 1% del total mundial de emisiones de C02"
+	},
+	{
+		"name": "Clasifica los residuos",
+		"categoryId": "60515b632e2f413804ffbf1b",
+		"description": "Separa tus residuos, Contenedor azul: Plásticos, Contenedor Gris: Papel y cartón, Contenedor negro: Vidrios y latas, Contenedor verde: Orgánico. (Fotografía de clasificación de basura)",
+		"reward": {
+			"experiencie": 100,
+			"coint": 100
+		},
+		"ambientalImpact": "Evitas la proliferación de enfermedades"
+	},
+	{
+		"name": "Reutiliza los productos",
+		"categoryId": "60515b632e2f413804ffbf1b",
+		"description": "Utiliza tu propia bolsa de compras y adquiere una botella de agua reutilizable para tus salidas. (Fotografía de reutilización de bolsas y/o botellas)",
+		"reward": {
+			"experiencie": 100,
+			"coint": 100
+		},
+		"ambientalImpact": "Contribuyes a disminuir la tasa de mortalidad de 100.000 mamíferos marinos al año"
+	},
+	{
+		"name": "A Granel",
+		"categoryId": "60515b702e2f413804ffbf1d",
+		"description": "Compra productos frescos y a granel, lleva tus propios envases. (Fotografía de la compra de productos a granel)",
+		"reward": {
+			"experiencie": 100,
+			"coint": 100
+		},
+		"ambientalImpact": "Reduces el uso de fundas plásticas y envolturas"
+	},
+	{
+		"name": "Consume lo nuestro",
+		"categoryId": "60515b702e2f413804ffbf1d",
+		"description": "Cambia el Centro Comercial por el Mercado, compras productos más frescos, sin transgénicos y locales. (Fotografía de compras en mercado local)",
+		"reward": {
+			"experiencie": 100,
+			"coint": 100
+		},
+		"ambientalImpact": "Reduces la emisión de CO2 al momento de transportar la materia prima para la fabricación y la distribución de productos"
+	},
+	{
+		"name": "Etiquetado energético",
+		"categoryId": "60515b702e2f413804ffbf1d",
+		"description": "Infórmate sobre el consumo de energía y otros datos complementarios relativos a cada tipo de aparato a lo largo de su vida. (Fotografía del equipo con etiqueta)",
+		"reward": {
+			"experiencie": 100,
+			"coint": 100
+		},
+		"ambientalImpact": "Reduces el consumo de energía eléctrica y tu huella ecológica"
+	},
+	{
+		"name": "Herramientas alternativas",
+		"categoryId": "60515b772e2f413804ffbf1e",
+		"description": "Utiliza la bicicleta como alternativa para movilizarte a tus diferentes actividades. (fotografía con la bicicleta como herramienta de movilidad)",
+		"reward": {
+			"experiencie": 100,
+			"coint": 100
+		},
+		"ambientalImpact": "Reducción de ruido, y emisión de gases de efecto invernadero"
+	},
+	{
+		"name": "Imprime responsablemente",
+		"categoryId": "60515b692e2f413804ffbf1c",
+		"description": "Imprime solo si es necesario y trata de hacerlo siempre usando las dos caras de una hoja (Fotografía al documento impreso, se verifica la impresión a doble cara)",
+		"reward": {
+			"experiencie": 100,
+			"coint": 100
+		},
+		"ambientalImpact": "Reduces la huella del CO2"
+	},
+	{
+		"name": "Disminuye la fuente",
+		"categoryId": "60515b692e2f413804ffbf1c",
+		"description": "Reduce el tamaño de letra de los documentos para aprovechar al máximo la cantidad de páginas que se van a imprimir. (Fotografía del documento con el texto impreso)",
+		"reward": {
+			"experiencie": 100,
+			"coint": 100
+		},
+		"ambientalImpact": "Minimizas el consumo de resmas de papel bond"
+	}
+]

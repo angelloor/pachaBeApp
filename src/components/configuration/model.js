@@ -32,9 +32,6 @@ const mySchema = new Schema({
             required: false,
         }
     }
+}, { collection: 'configuration' })
 
-})
-
-const Configuration = mongoose.model('Configuration', mySchema)
-
-module.exports = Configuration
+module.exports = mongoose.model('configuration', mySchema)

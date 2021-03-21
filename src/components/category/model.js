@@ -14,10 +14,7 @@ const mySchema = new Schema({
     imageUrl: {
         type: String,
         defaul: ''
-    },
+    }
+}, { collection: 'category' })
 
-})
-
-const Category = mongoose.model('Category', mySchema)
-
-module.exports = Category
+module.exports = mongoose.model('category', mySchema)

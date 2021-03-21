@@ -6,12 +6,12 @@ const mySchema = new Schema({
     challengeId: {
         type: Schema.Types.ObjectId,
         required: true,
-        ref: 'Challenge'
+        ref: 'challenge'
     },
     userId: {
         type: Schema.Types.ObjectId,
         required: true,
-        ref: 'User'
+        ref: 'user'
     },
     statusChallenge: {
         type: Number,
@@ -23,11 +23,8 @@ const mySchema = new Schema({
         required: false,
         default: ''
     },
+}, { collection: 'challengeUser' })
 
-})
-
-const ChallengeUser = mongoose.model('ChallengeUser', mySchema)
-
-module.exports = ChallengeUser
+module.exports = mongoose.model('challengeUser', mySchema)
 
 

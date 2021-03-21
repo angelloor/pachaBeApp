@@ -5,14 +5,12 @@ const Schema = mongoose.Schema
 const mySchema = new Schema({
     userId: {
         type: Schema.Types.ObjectId,
-        ref: 'User'
+        ref: 'user'
     },
     funFactsId: {
         type: Schema.Types.ObjectId,
-        ref: 'FunFacts'
+        ref: 'funFacts'
     }
-})
+}, { collection: 'funFactsUser' })
 
-const FunFactsUser = mongoose.model('FunFactsUser', mySchema)
-
-module.exports = FunFactsUser
+module.exports = mongoose.model('funFactsUser', mySchema)

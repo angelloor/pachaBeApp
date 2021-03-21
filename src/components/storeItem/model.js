@@ -20,8 +20,6 @@ const mySchema = new Schema({
         required: true,
         default: String
     }
-})
+}, { collection: 'storeItem' })
 
-const StoreItem = mongoose.model('StoreItem', mySchema)
-
-module.exports = StoreItem
+module.exports = mongoose.model('storeItem', mySchema)

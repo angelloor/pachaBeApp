@@ -11,6 +11,8 @@ const funFactsUser = require('../components/funFactsUser/network')
 const challengeUser = require('../components/challengeUser/network')
 const course = require('../components/course/network')
 const topics = require('../components/topics/network')
+const topicsUser = require('../components/topicsUser/network')
+const getData = require('../components/getData/network')
 
 
 const routes = (app) => {
@@ -27,6 +29,8 @@ const routes = (app) => {
     app.use('/challengeUser', challengeUser)
     app.use('/course', course)
     app.use('/topics', topics)
+    app.use('/topicsUser', topicsUser)
+    app.use('/getData', getData)
 }
 
 module.exports = routes

@@ -23,7 +23,6 @@ const mySchema = new Schema({
     answers: {
         type: Array,
         required: true,
-
     },
     correctAnswer: {
         type: String,
@@ -39,8 +38,6 @@ const mySchema = new Schema({
             required: true,
         }
     }
-})
+}, { collection: 'topics' })
 
-const Topics = mongoose.model('Topics', mySchema)
-
-module.exports = Topics
+module.exports = mongoose.model('topics', mySchema)

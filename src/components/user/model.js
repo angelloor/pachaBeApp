@@ -44,8 +44,6 @@ const mySchema = new Schema({
         type: String,
         defaul: ''
     },
-})
+}, { collection: 'user' })
 
-const User = mongoose.model('User', mySchema)
-
-module.exports = User
+module.exports = mongoose.model('user', mySchema)

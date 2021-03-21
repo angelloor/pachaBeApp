@@ -21,11 +21,8 @@ const mySchema = new Schema({
     },
     imageUrl: {
         type: String,
-        defaul: ''
-    },
+        default: ''
+    }
+}, { collection: 'news' })
 
-})
-
-const News = mongoose.model('News', mySchema)
-
-module.exports = News
+module.exports = mongoose.model('news', mySchema)

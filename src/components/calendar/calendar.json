@@ -1,0 +1,184 @@
+[
+	{
+		"dayText": "26 de enero",
+		"dayCelebrate": "26/01",
+		"isCelebrated": "DÍA MUNDIAL DE LA EDUCACIÓN AMBIENTAL",
+		"description": "El 26 de enero se celebra el Día Mundial de la Educación Ambiental, que tiene su origen en 1975, año en que se celebró en Belgrado, el Seminario Internacional de Educación Ambiental",
+		"categoryId": "60515b882e2f413804ffbf21"
+	},
+	{
+		"dayText": "28 de enero",
+		"dayCelebrate": "28/01",
+		"isCelebrated": "DÍA MUNDIAL DE LA REDUCCIÓN DE EMISIONES",
+		"description": "La Organización de las Naciones Unidas (ONU), designó este día para tomar decisiones en beneficio del cuidado ambiental y para impulsar el desarrollo y aplicación de políticas de reducción en emisiones de gases",
+		"categoryId": "60515b632e2f413804ffbf1b"
+	},
+	{
+		"dayText": "2 de febrero",
+		"dayCelebrate": "02/02",
+		"isCelebrated": "DÍA MUNDIAL DE LOS HUMEDALES",
+		"description": "Se conmemora la fecha en que se adoptó la Convención sobre los Humedales, el 2 de febrero de 1971",
+		"categoryId": "60515b8d2e2f413804ffbf22"
+	},
+	{
+		"dayText": "21 de febrero",
+		"dayCelebrate": "21/02",
+		"isCelebrated": "DÍA MUNDIAL PAR LA PROTECCIÓN DE LOS OSOS",
+		"description": "Se la celebra desde 2011 y busca crear conciencia y llamar la atención de la sociedad para fortalecer los compromisos en torno a la conservación de los osos a nivel mundial",
+		"categoryId": "60515b692e2f413804ffbf1c"
+	},
+	{
+		"dayText": "3 de marzo",
+		"dayCelebrate": "03/03",
+		"isCelebrated": "DÍA MUNDIAL DE LA VIDA SILVESTRE",
+		"description": "Fecha proclamada en 2013 por la Asamblea General de las Naciones Unidas, en conmemoración de la Convención sobre el Comercio Internacional de Especies Amenazadas de Fauna y Flora Silvestres",
+		"categoryId": "60515b882e2f413804ffbf21"
+	},
+	{
+		"dayText": "5 de marzo",
+		"dayCelebrate": "05/03",
+		"isCelebrated": "DÍA MUNDIAL DE LA EFICIENCIA ENERGÉTICA",
+		"description": "Surgió en Austria durante la Primera Conferencia Internacional de la Eficiencia Energética, para de sensibilizar a todas las personas sobre la necesidad de reducir el consumo energético",
+		"categoryId": "60515b5d2e2f413804ffbf1a"
+	},
+	{
+		"dayText": "19 de marzo",
+		"dayCelebrate": "19/03",
+		"isCelebrated": "ANIVERSARIO DEL PARQUE NACIONAL LLANGANATES",
+		"description": "El Parque Nacional Llanganates fue creado el 19 de marzo de 1996. Alberga más de 800 especies de plantas",
+		"categoryId": "60515b882e2f413804ffbf21"
+	},
+	{
+		"dayText": "21 de marzo",
+		"dayCelebrate": "21/03",
+		"isCelebrated": "DÍA INTERNACIONAL DE LOS BOSQUES",
+		"description": "Los bosques albergan alrededor del 80% de la biodiversidad terrestre de todo el mundo",
+		"categoryId": "60515b882e2f413804ffbf21"
+	},
+	{
+		"dayText": "22 de marzo",
+		"dayCelebrate": "22/03",
+		"isCelebrated": "DÍA MUNDIAL DEL AGUA",
+		"description": "El agua es un elemento imprescindible para el desarrollo de la vida en el planeta, unidos por la conservación y restauración ambiental",
+		"categoryId": "60515b472e2f413804ffbf19"
+	},
+	{
+		"dayText": "26 de marzo",
+		"dayCelebrate": "26/03",
+		"isCelebrated": "DIA MUNDIAL DEL CLIMA",
+		"description": "El clima es la conjugación de muchas condiciones de tiempo, como temperatura, lluvia, vientos, nubosidad y humedad",
+		"categoryId": "60515b472e2f413804ffbf19"
+	},
+	{
+		"dayText": "28 de marzo",
+		"dayCelebrate": "28/03",
+		"isCelebrated": "LA HORA MUNDIAL DEL PLANETA",
+		"description": "La Hora del Planeta, consiste en un apagón eléctrico voluntario de luces y aparatos eléctricos no indispensables durante una hora",
+		"categoryId": "60515b822e2f413804ffbf20"
+	},
+	{
+		"dayText": "22 de abril",
+		"dayCelebrate": "22/04",
+		"isCelebrated": "DÍA MUNDIAL DE LA TIERRA",
+		"description": "“Todos los días son el Día de la Tierra”, cuídale y protégela a nuestra casa común",
+		"categoryId": "60515b822e2f413804ffbf20"
+	},
+	{
+		"dayText": "9 de mayo",
+		"dayCelebrate": "09/05",
+		"isCelebrated": "DÍA MUNDIAL DE LAS AVES MIGRATORIAS",
+		"description": "Se celebra anualmente y tiene como objetivo inspirar la conservación en todo el mundo tanto de las aves migratorias como de sus hábitats",
+		"categoryId": "60515b822e2f413804ffbf20"
+	},
+	{
+		"dayText": "17 de mayo",
+		"dayCelebrate": "17/05",
+		"isCelebrated": "DÍA MUNDIAL DEL RECICLAJE",
+		"description": "Concienciar a la población sobre la importancia de tratar los residuos como corresponde con el fin de proteger el medio ambiente",
+		"categoryId": "60515b882e2f413804ffbf21"
+	},
+	{
+		"dayText": "20 de mayo",
+		"dayCelebrate": "20/05",
+		"isCelebrated": "DÍA MUNDIAL DE LAS ABEJAS",
+		"description": "Sensibilizar del papel esencial que las abejas y otros polinizadores desempeñan en el mantenimiento de la salud de las personas y del planeta",
+		"categoryId": "60515b7c2e2f413804ffbf1f"
+	},
+	{
+		"dayText": "22 de mayo",
+		"dayCelebrate": "22/05",
+		"isCelebrated": "DÍA INTERNACIONAL DE LA BIODIVERSIDAD",
+		"description": "La enorme variedad de especies que habitan en el planeta es la base del desarrollo sostenible de la población en todos los sectores económicos",
+		"categoryId": "60515b882e2f413804ffbf21"
+	},
+	{
+		"dayText": "3 de junio",
+		"dayCelebrate": "03/06",
+		"isCelebrated": "DÍA MUNDIAL DE LA BICICLETA",
+		"description": "Es un símbolo del transporte sostenible y transmite un mensaje positivo para fomentar el consumo y la producción sostenibles",
+		"categoryId": "60515b7c2e2f413804ffbf1f"
+	},
+	{
+		"dayText": "5 de junio",
+		"dayCelebrate": "05/06",
+		"isCelebrated": "DÍA MUNDIAL DEL AMBIENTE",
+		"description": "Desde 1974, se celebra para fomentar la conciencia y la acción global a favor de la protección del medio ambiente",
+		"categoryId": "60515b7c2e2f413804ffbf1f"
+	},
+	{
+		"dayText": "8 de junio",
+		"dayCelebrate": "08/06",
+		"isCelebrated": "DÍA MUNDIAL DE LOS OCÉANOS",
+		"description": "Conmemoramos el papel importante que tienen los océanos en la vida cotidiana, son los pulmones de nuestro planeta, la mayor parte del oxígeno que respiramos",
+		"categoryId": "60515b472e2f413804ffbf19"
+	},
+	{
+		"dayText": "26 de junio",
+		"dayCelebrate": "26/06",
+		"isCelebrated": "DÍA INTERNACIONAL DE LOS BOSQUES TROPICALES",
+		"description": "La preservación de los bosques tropicales contribuye a la regulación del clima, y generación del sustento de las comunidades que vive en estos ecosistemas",
+		"categoryId": "60515b882e2f413804ffbf21"
+	},
+	{
+		"dayText": "26 de julio",
+		"dayCelebrate": "26/07",
+		"isCelebrated": "CREACIÓN DEL PARQUE NACIONAL YASUNÍ",
+		"description": "El Parque Nacional Yasuní, situado entre las provincias de Napo y Orellana. Es el área protegida más grande de Ecuador continental",
+		"categoryId": "60515b882e2f413804ffbf21"
+	},
+	{
+		"dayText": "18 de septiembre",
+		"dayCelebrate": "18/09",
+		"isCelebrated": "DÍA MUNDIAL DEL BAMBÚ",
+		"description": "El bambú un recurso renovable de suma importancia en la lucha contra el cambio climático en Latinoamérica y alternativa viable para vivienda social bioclimática",
+		"categoryId": "60515b882e2f413804ffbf21"
+	},
+	{
+		"dayText": "13 de octubre",
+		"dayCelebrate": "13/10",
+		"isCelebrated": "DÍA INTERNACIONAL PARA LA REDUCCIÓN DE LOS DESASTRES NATURALES",
+		"description": "Minimizar los riesgos derivados de los desastres naturales y generar una cultura mundial sobre prevención y preparación ante fenómenos naturales",
+		"categoryId": "60515b8d2e2f413804ffbf22"
+	},
+	{
+		"dayText": "23 de octubre",
+		"dayCelebrate": "23/10",
+		"isCelebrated": "DÍA MUNDIAL DEL AHORRO DE ENERGÍA",
+		"description": "Concienciar a la población sobre el uso racional de energía, utilizándola de forma eficaz y promoviendo alternativas energéticas renovables",
+		"categoryId": "60515b5d2e2f413804ffbf1a"
+	},
+	{
+		"dayText": "24 de octubre",
+		"dayCelebrate": "24/10",
+		"isCelebrated": "DÍA INTERNACIONAL CONTRA EL CAMBIO CLIMÁTICO",
+		"description": "Sensibilizar a millones de personas de todo el mundo acerca de los efectos del cambio climático y el grave peligro que conlleva el calentamiento global",
+		"categoryId": "60515b8d2e2f413804ffbf22"
+	},
+	{
+		"dayText": "5 de diciembre",
+		"dayCelebrate": "05/12",
+		"isCelebrated": "DÍA MUNDIAL DEL SUELO",
+		"description": "Crear conciencia de la importancia de mantener los ecosistemas sanos y el bienestar humano abordando los crecientes desafíos de la ordenación del suelo",
+		"categoryId": "60515b822e2f413804ffbf20"
+	}
+]

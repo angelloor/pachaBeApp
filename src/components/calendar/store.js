@@ -9,10 +9,11 @@ addCalendar = (calendar) => {
 
 getCalendar = async (filterCalendar) => {
     let filter = {}
+    let populate = { path: 'categoryId', select: 'colorPosition imageUrl' }
     if (filterCalendar != null) {
         filter = { _id: filterCalendar }
     }
-    const calendar = await Model.find(filter)
+    const calendar = await Model.find().select({ _id: 0, dayText: 1 }).populate(populate)
     return calendar
 }
 
