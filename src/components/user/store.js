@@ -1,6 +1,7 @@
 const Model = require('./model')
 const db = require('../../network/db')
 const nowDate = require('../../utils/Date')
+const storeGetData = require('../getData/store')
 db.Connect()
 
 addUser = (user) => {
@@ -8,13 +9,19 @@ addUser = (user) => {
     myUser.save()
 }
 
-getUser = async (filterUser) => {
-    let filter = {}
-    if (filterUser != null) {
-        filter = { _id: filterUser }
+loginUser = async (email, password) => {
+    let statusLogin = false
+    const user = await Model.findOne({ email: email })
+    let data = {}
+    console.log(user);
+    if (!user) {
+        return statusLogin
     }
-    const user = await Model.find(filter)
-    return user
+    if (password === user.password) {
+        statusLogin = true
+        data = storeGetData.getData(email)
+    }
+    return data
 }
 
 updateUser = async (idUser, numberID, names, birdOfDate, email, phone, password, coint, experience, imageUrl) => {
@@ -45,7 +52,7 @@ deleteUser = (idUser) => {
 
 module.exports = {
     addUser,
-    getUser,
+    loginUser,
     updateUser,
     deleteUser,
 }

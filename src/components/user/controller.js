@@ -7,7 +7,7 @@ addUser = (numberID, names, birdOfDate, email, phone, password, coint, experienc
             reject("No se ha recibido todos los datos")
             return false
         }
-        const date = nowDate()
+        const date = nowDate.getDate()
 
         const userAdd = {
             numberID,
@@ -27,9 +27,9 @@ addUser = (numberID, names, birdOfDate, email, phone, password, coint, experienc
     })
 }
 
-getUser = (filterUser) => {
+loginUser = (email, password) => {
     return new Promise((resolve, reject) => {
-        resolve(store.getUser(filterUser))
+        resolve(store.loginUser(email, password))
     })
 }
 
@@ -62,7 +62,7 @@ deleteUser = (userId) => {
 
 module.exports = {
     addUser,
-    getUser,
+    loginUser,
     updateUser,
     deleteUser,
 }

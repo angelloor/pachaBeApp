@@ -13,4 +13,6 @@ getDate = () => {
     return dateActuallity
 }
 
-module.exports = getDate
+module.exports = {
+    getDate
+}

@@ -8,7 +8,7 @@ addYourShopping = (itemId, userId) => {
             return false
         }
 
-        const date = nowDate()
+        const date = nowDate.getDate()
 
         const yourShopping = {
             itemId,
@@ -34,7 +34,7 @@ updateYourShopping = (idYourShopping) => {
             return false
         }
 
-        const date = nowDate()
+        const date = nowDate.getDate()
 
         const result = await store.updateYourShopping(idYourShopping, date)
         resolve(result)

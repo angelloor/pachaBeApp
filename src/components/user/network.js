@@ -23,9 +23,13 @@ router.post('/', (req, res) => {
         })
 })
 
-router.get('/', (req, res) => {
-    const filterUser = req.query.idUser || null
-    controllerUser.getUser(filterUser)
+router.post('/login', (req, res) => {
+    const { email, password } = req.body
+    if (email == null || password == null) {
+        response.error(req, res, 'Se necesita que se envie el correo y contraseña', 500, 'No se ha recibido las credenciales')
+        return
+    }
+    controllerUser.loginUser(email, password)
         .then((user) => {
             response.success(req, res, user, 200)
         })

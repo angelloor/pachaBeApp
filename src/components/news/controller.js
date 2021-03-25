@@ -8,7 +8,7 @@ addNews = (title, description, imageUrl) => {
             reject("No se ha recibido todos los datos")
             return false
         }
-        const date = nowDate()
+        const date = nowDate.getDate()
 
         let shortDescription = description.slice(0, 49)
 
@@ -42,7 +42,7 @@ updateNews = (idNews, title, description, imageUrl) => {
             return false
         }
 
-        const date = nowDate()
+        const date = nowDate.getDate()
 
         let shortDescription = description.slice(0, 49)
 
