@@ -40,6 +40,7 @@ getData = async (emailUser) => {
         for (let i = 0; i < courses.length; i++) {
             topics = await ModelTopics.find({ courseId: courses[i]._id })
             course = {
+                _id: courses[i]._id,
                 name: courses[i].name,
                 description: courses[i].description,
                 colorPosition: courses[i].categoryId.colorPosition,

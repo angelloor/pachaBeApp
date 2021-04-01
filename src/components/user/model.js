@@ -42,7 +42,7 @@ const mySchema = new Schema({
     },
     imageUrl: {
         type: String,
-        defaul: ''
+        default: ''
     },
 }, { collection: 'user' })
 
