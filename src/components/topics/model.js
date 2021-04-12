@@ -37,6 +37,14 @@ const mySchema = new Schema({
             type: Number,
             required: true,
         }
+    },
+    imageTopic: {
+        type: String,
+        required: true,
+    },
+    isCompleted: {
+        type: Boolean,
+        default: false,
     }
 }, { collection: 'topics' })
 

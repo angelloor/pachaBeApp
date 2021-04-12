@@ -4,7 +4,7 @@ const controller = require('./controller')
 const response = require('../../network/response')
 
 router.post('/', (req, res) => {
-    controller.addTopics(req.body.name, req.body.content, req.body.courseId, req.body.question, req.body.answers, req.body.correctAnswer, req.body.reward)
+    controller.addTopics(req.body.name, req.body.content, req.body.courseId, req.body.question, req.body.answers, req.body.correctAnswer, req.body.reward, req.body.imageTopic)
         .then((topics) => {
             response.success(req, res, topics, 200)
         })

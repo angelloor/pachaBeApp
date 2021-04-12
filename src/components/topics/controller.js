@@ -1,8 +1,8 @@
 const store = require("./store")
 
-addTopics = (name, content, courseId, question, answers, correctAnswer, reward) => {
+addTopics = (name, content, courseId, question, answers, correctAnswer, reward, imageTopic) => {
     return new Promise((resolve, reject) => {
-        if (!name || !content || !courseId || !question || !answers || !correctAnswer || !reward) {
+        if (!name || !content || !courseId || !question || !answers || !correctAnswer || !reward || !imageTopic) {
             reject("No se ha recibido todos los datos")
             return false
         }
@@ -14,7 +14,8 @@ addTopics = (name, content, courseId, question, answers, correctAnswer, reward) 
             question,
             answers,
             correctAnswer,
-            reward
+            reward,
+            imageTopic
         }
 
         store.addTopics(topics)
