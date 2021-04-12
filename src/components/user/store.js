@@ -27,7 +27,7 @@ loginUser = async (email, password) => {
 updateUser = async (idUser, numberID, names, birdOfDate, email, phone, password, coint, experience, imageUrl) => {
     const foundUser = await Model.findOne({ _id: idUser })
 
-    const date = nowDate()
+    const date = nowDate.getDate()
 
     foundUser.numberID = numberID
     foundUser.names = names
@@ -44,6 +44,19 @@ updateUser = async (idUser, numberID, names, birdOfDate, email, phone, password,
     return updateNew
 }
 
+updatePassword = async (user, passwordNew) => {
+    const foundUser = await Model.findOne({ _id: user })
+
+    const date = nowDate.getDate()
+
+    foundUser.password = passwordNew
+    foundUser.registerOfDate = date
+
+    const updateNew = await foundUser.save()
+    return updateNew
+}
+
+
 deleteUser = (idUser) => {
     return Model.deleteOne({
         _id: idUser
@@ -54,5 +67,6 @@ module.exports = {
     addUser,
     loginUser,
     updateUser,
+    updatePassword,
     deleteUser,
 }

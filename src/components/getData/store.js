@@ -3,6 +3,7 @@ const ModelUser = require('../user/model')
 const ModelCourse = require('../course/model')
 const ModelChallenge = require('../challenge/model')
 const ModelStoreItem = require('../storeItem/model')
+const ModelCategory = require('../category/model')
 const ModelCalendar = require('../calendar/model')
 const ModelTopics = require('../topics/model')
 const ModelNews = require('../news/model')
@@ -43,21 +44,58 @@ getData = async (emailUser) => {
                 _id: courses[i]._id,
                 name: courses[i].name,
                 description: courses[i].description,
-                colorPosition: courses[i].categoryId.colorPosition,
-                imageUrl: courses[i].categoryId.imageUrl,
+                categoryId: courses[i].categoryId,
                 topic: topics
             }
 
             content.push(course)
         }
     } else {
-        content = await ModelChallenge.find().populate(populateCategory)
+        challenges = await ModelChallenge.find()
+
+        const arrayCategory = []
+        challenges.map((item) => {
+            if (!(arrayCategory.includes((item.categoryId).toString()))) {
+                arrayCategory.push((item.categoryId).toString())
+            }
+        })
+        let element = {}
+        for (let i = 0; i < arrayCategory.length; i++) {
+
+            categoryChallenge = await ModelCategory.find({ _id: arrayCategory[i] }).select({
+                _id: 1,
+                name: 1,
+                colorPosition: 1,
+                imageUrl: 1
+            })
+
+            console.log(categoryChallenge);
+
+            challengue = await ModelChallenge.find({ categoryId: arrayCategory[i] }).select({
+                _id: 1,
+                name: 1,
+                description: 1,
+                shortDescription: 1,
+                ambientalImpact: 1,
+                reward: 1
+            })
+            element = {
+                _id: categoryChallenge[0]._id,
+                name: categoryChallenge[0].name,
+                categoryId: {
+                    colorPosition: categoryChallenge[0].colorPosition,
+                    imageUrl: categoryChallenge[0].imageUrl
+                },
+                challengue
+            }
+            content.push(element)
+        }
     }
 
     const storeItem = await ModelStoreItem.find()
 
     const calendar = await ModelCalendar.find().populate(populateCategory)
-    const news = await ModelNews.find()
+    const news = await ModelNews.find().sort([['datePublished', -1]])
     const configuration = await ModelConfiguration.find()
 
     const data = {

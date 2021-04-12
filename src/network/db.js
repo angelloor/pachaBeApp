@@ -5,7 +5,8 @@ if (process.env.NODE_ENV !== 'production') {
 }
 
 const Connect = () => {
-    let connectStr = `mongodb+srv://${process.env.USERNAMEDB}:${process.env.PASSWORD}@devpacha.s5qbu.mongodb.net/${process.env.DB}`
+    let connectStr = `mongodb://localhost:27017/pachaapp`
+    // let connectStr = `mongodb+srv://${process.env.USERNAMEDB}:${process.env.PASSWORD}@devpacha.s5qbu.mongodb.net/${process.env.DB}`
     try {
         db.Promise = global.Promise
         db.connect(connectStr, {

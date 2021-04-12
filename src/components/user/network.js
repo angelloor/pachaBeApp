@@ -8,6 +8,7 @@ router.post('/', (req, res) => {
         response.error(req, res, 'Acceso denegado', 500, 'La password de la req es incorrecta')
         return
     }
+
     controllerUser.addUser(
         req.body.idNumber,
         req.body.Names,
@@ -40,6 +41,27 @@ router.post('/login', (req, res) => {
         })
         .catch(err => {
             response.error(req, res, err, 500, err)
+        })
+})
+
+
+router.post('/changePassword', (req, res) => {
+    const { user, passwordActually, passwordNew } = req.body
+    if (req.headers.token != '4C79A286C3ADE40D27696F617F94D646B7A38236FF385DF962EFAA9755BB2CBD') {
+        response.error(req, res, 'Acceso denegado', 500, 'La password de la req es incorrecta')
+        return
+    }
+    if (user == null || passwordActually == null || passwordNew == null) {
+        response.error(req, res, 'Se necesita que se envie el usuario y contraseña a actualizar', 500, 'No se ha recibido los datos')
+        return
+    }
+    controllerUser.changePassword(user, passwordActually, passwordNew)
+        .then((user) => {
+            response.success(req, res, user, 200)
+        })
+        .catch(err => {
+            response.error(req, res, err, 500, err)
+            console.log('por aqui');
         })
 })
 

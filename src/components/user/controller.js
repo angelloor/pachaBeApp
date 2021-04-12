@@ -49,6 +49,23 @@ loginUser = (email, password) => {
     })
 }
 
+changePassword = (user, passwordActually, passwordNew) => {
+    return new Promise(async (resolve, reject) => {
+        const userConsulted = await Model.findOne({ _id: user })
+        if (!userConsulted) {
+            reject('El usuario no existe')
+            return
+        }
+        if (!(userConsulted.password == passwordActually)) {
+            reject('Contraseña actual incorrecta')
+            return
+        }
+        const result = await store.updatePassword(user, passwordNew)
+        resolve(result)
+
+    })
+}
+
 updateUser = (idUser, numberID, names, birdOfDate, email, phone, password, coint, experience, imageUrl) => {
     return new Promise(async (resolve, reject) => {
         if (!idUser || !numberID || !names || !birdOfDate || !email || !phone || !password || !coint || !experience || !imageUrl) {
@@ -81,4 +98,5 @@ module.exports = {
     loginUser,
     updateUser,
     deleteUser,
+    changePassword
 }

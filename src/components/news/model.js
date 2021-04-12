@@ -22,6 +22,14 @@ const mySchema = new Schema({
     imageUrl: {
         type: String,
         default: ''
+    },
+    nameButton: {
+        type: String,
+        default: ''
+    },
+    linkButton: {
+        type: String,
+        default: ''
     }
 }, { collection: 'news' })
 

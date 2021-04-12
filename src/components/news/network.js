@@ -4,7 +4,7 @@ const controller = require('./controller')
 const response = require('../../network/response')
 
 router.post('/', (req, res) => {
-    controller.addNews(req.body.title, req.body.description, req.body.imageUrl)
+    controller.addNews(req.body.title, req.body.description, req.body.imageUrl, req.body.nameButton, req.body.linkButton)
         .then((news) => {
             response.success(req, res, news, 200)
         })
