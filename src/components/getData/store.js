@@ -1,11 +1,14 @@
 const db = require('../../network/db')
 const ModelUser = require('../user/model')
 const ModelCourse = require('../course/model')
+const ModelFunFacts = require('../funFacts/model')
+const ModelFunFactsUser = require('../funFactsUser/model')
 const ModelChallenge = require('../challenge/model')
 const ModelStoreItem = require('../storeItem/model')
 const ModelCategory = require('../category/model')
 const ModelCalendar = require('../calendar/model')
 const ModelTopics = require('../topics/model')
+const ModelYourShopping = require('../yourShopping/model')
 const ModelNews = require('../news/model')
 const ModelConfiguration = require('../configuration/model')
 const Age = require('../../utils/Age')
@@ -25,6 +28,43 @@ getData = async (emailUser) => {
         experience: 1,
         imageUrl: 1
     })
+
+    const populateItemStore = { path: 'itemId', select: 'title description urlImage' }
+
+    const yourShopping = await ModelYourShopping.find({ userId: user._id }).populate(populateItemStore)
+    {/* funFacts */ }
+    const funFacts = await ModelFunFacts.find()
+    const funFactsUser = await ModelFunFactsUser.find({ userId: user._id })
+
+    let newArayFunFacts = []
+    funFacts.map((item) => {
+        newArayFunFacts.push((item._id).toString())
+    })
+
+    let newArayFunFactsUser = []
+    funFactsUser.map((item) => {
+        newArayFunFactsUser.push((item.funFactsId).toString())
+    })
+
+    var result = newArayFunFacts.filter(element => !newArayFunFactsUser.includes(element));
+    const cantidaElementosArray = result.length
+
+    console.log(`solo me quedan ${cantidaElementosArray} funfact para mostrar`)
+
+    let positionElement
+    let funFactsFinal
+    if (cantidaElementosArray != 0) {
+        do {
+            positionElement = getRandomInt(0, cantidaElementosArray)
+        } while (positionElement == cantidaElementosArray)
+
+        const funFactsOpen = result[positionElement]
+        funFactsFinal = await ModelFunFacts.findOne({ _id: funFactsOpen })
+    } else {
+        funFactsFinal = {}
+    }
+
+    {/* funFacts */ }
 
     const { isBirthday, edad } = Age.getAge(user.birdOfDate)
 
@@ -69,8 +109,6 @@ getData = async (emailUser) => {
                 imageUrl: 1
             })
 
-            console.log(categoryChallenge);
-
             challengue = await ModelChallenge.find({ categoryId: arrayCategory[i] }).select({
                 _id: 1,
                 name: 1,
@@ -113,9 +151,15 @@ getData = async (emailUser) => {
         storeItem,
         calendar,
         news,
-        configuration
+        configuration,
+        yourShopping,
+        funFacts: funFactsFinal
     }
     return data
+}
+
+getRandomInt = (min, max) => {
+    return Math.floor(Math.random() * (max - min)) + min;
 }
 
 module.exports = {

@@ -4,7 +4,7 @@ const controller = require('./controller')
 const response = require('../../network/response')
 
 router.post('/', (req, res) => {
-    controller.addYourShopping(req.body.itemId, req.body.userId)
+    controller.addYourShopping(req.body.itemId, req.body.userId, req.body.price)
         .then((yourShopping) => {
             response.success(req, res, yourShopping, 200)
         })

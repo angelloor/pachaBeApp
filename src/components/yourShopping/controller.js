@@ -1,8 +1,9 @@
 const store = require("./store")
 const nowDate = require('../../utils/Date')
+const ModelUser = require('../user/model')
 
-addYourShopping = (itemId, userId) => {
-    return new Promise((resolve, reject) => {
+addYourShopping = (itemId, userId, price) => {
+    return new Promise(async (resolve, reject) => {
         if (!itemId || !userId) {
             reject("No se ha recibido todos los datos")
             return false
@@ -16,16 +17,22 @@ addYourShopping = (itemId, userId) => {
             shoppingDate: date,
         }
 
+        //actualizar AmbientalCoint
+        const userFind = await ModelUser.findOne({
+            _id: userId
+        })
+
+        userFind.coint = userFind.coint - price
+
+        const updateCount = await userFind.save()
+
+        console.log(updateCount)
+
         store.addYourShopping(yourShopping)
         resolve(yourShopping)
     })
 }
 
-getYourShopping = (filterYourShopping) => {
-    return new Promise((resolve, reject) => {
-        resolve(store.getYourShopping(filterYourShopping))
-    })
-}
 
 updateYourShopping = (idYourShopping) => {
     return new Promise(async (resolve, reject) => {
