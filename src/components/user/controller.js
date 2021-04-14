@@ -66,6 +66,45 @@ changePassword = (user, passwordActually, passwordNew) => {
     })
 }
 
+changeCoint = (userId, newCoint) => {
+    return new Promise(async (resolve, reject) => {
+        const userConsulted = await Model.findOne({ _id: userId })
+        console.log(userConsulted);
+        if (!userConsulted) {
+            reject('El usuario no existe')
+            return
+        }
+        const result = await store.changeCoint(userId, newCoint)
+        resolve(result)
+    })
+}
+
+changeExperience = (userId, newExperience) => {
+    return new Promise(async (resolve, reject) => {
+        const userConsulted = await Model.findOne({ _id: userId })
+        if (!userConsulted) {
+            reject('El usuario no existe')
+            return
+        }
+        const result = await store.changeExperience(userId, newExperience)
+        resolve(result)
+
+    })
+}
+
+changeReward = (userId, newCoint, newExperience) => {
+    return new Promise(async (resolve, reject) => {
+        const userConsulted = await Model.findOne({ _id: userId })
+        if (!userConsulted) {
+            reject('El usuario no existe')
+            return
+        }
+        const result = await store.changeReward(userId, newCoint, newExperience)
+        resolve(result)
+
+    })
+}
+
 updateUser = (idUser, numberID, names, birdOfDate, email, phone, password, coint, experience, imageUrl) => {
     return new Promise(async (resolve, reject) => {
         if (!idUser || !numberID || !names || !birdOfDate || !email || !phone || !password || !coint || !experience || !imageUrl) {
@@ -98,5 +137,8 @@ module.exports = {
     loginUser,
     updateUser,
     deleteUser,
-    changePassword
+    changePassword,
+    changeCoint,
+    changeExperience,
+    changeReward
 }

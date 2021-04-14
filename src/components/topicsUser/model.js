@@ -12,11 +12,6 @@ const mySchema = new Schema({
         type: Schema.Types.ObjectId,
         ref: 'topics',
         required: true,
-    },
-    status: {
-        type: Boolean,
-        required: false,
-        default: false
     }
 }, { collection: 'topicsUser' })
 

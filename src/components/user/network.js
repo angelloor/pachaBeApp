@@ -65,6 +65,68 @@ router.post('/changePassword', (req, res) => {
         })
 })
 
+
+router.post('/changeCoint', (req, res) => {
+    const { userId, newCoint } = req.body
+    if (req.headers.token != '4C79A286C3ADE40D27696F617F94D646B7A38236FF385DF962EFAA9755BB2CBD') {
+        response.error(req, res, 'Acceso denegado', 500, 'La password de la req es incorrecta')
+        return
+    }
+    if (userId == null || newCoint == null) {
+        response.error(req, res, 'Se necesita que se envie el userId y el newCoint para actualizar', 500, 'No se ha recibido los datos')
+        return
+    }
+    controllerUser.changeCoint(userId, newCoint)
+        .then((user) => {
+            response.success(req, res, user, 200)
+        })
+        .catch(err => {
+            response.error(req, res, err, 500, err)
+            console.log('por aqui');
+        })
+})
+
+router.post('/changeExperience', (req, res) => {
+    const { userId, newExperience } = req.body
+    if (req.headers.token != '4C79A286C3ADE40D27696F617F94D646B7A38236FF385DF962EFAA9755BB2CBD') {
+        response.error(req, res, 'Acceso denegado', 500, 'La password de la req es incorrecta')
+        return
+    }
+    if (userId == null || newExperience == null) {
+        response.error(req, res, 'Se necesita que se envie el userId y el newExperience para actualizar', 500, 'No se ha recibido los datos')
+        return
+    }
+    controllerUser.changeExperience(userId, newExperience)
+        .then((user) => {
+            response.success(req, res, user, 200)
+        })
+        .catch(err => {
+            response.error(req, res, err, 500, err)
+            console.log('por aqui');
+        })
+})
+
+router.post('/changeReward', (req, res) => {
+    const { userId, newCoint, newExperience } = req.body
+    if (req.headers.token != '4C79A286C3ADE40D27696F617F94D646B7A38236FF385DF962EFAA9755BB2CBD') {
+        response.error(req, res, 'Acceso denegado', 500, 'La password de la req es incorrecta')
+        return
+    }
+    if (userId == null || newCoint == null || newExperience == null) {
+        response.error(req, res, 'Se necesita que se envie el userId, newCoint y el newExperience para actualizar', 500, 'No se ha recibido los datos')
+        return
+    }
+    controllerUser.changeReward(userId, newCoint, newExperience)
+        .then((user) => {
+            response.success(req, res, user, 200)
+        })
+        .catch(err => {
+            response.error(req, res, err, 500, err)
+            console.log('por aqui');
+        })
+})
+
+
 router.patch('/:id', (req, res) => {
     controllerUser.updateUser(
         req.params.id,

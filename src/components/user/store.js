@@ -56,6 +56,34 @@ updatePassword = async (user, passwordNew) => {
     return updateNew
 }
 
+changeCoint = async (userId, newCoint) => {
+    const foundUser = await Model.findOne({ _id: userId })
+
+    foundUser.coint = newCoint
+
+    const result = await foundUser.save()
+    return result
+}
+
+
+changeExperience = async (userId, newExperience) => {
+    const foundUser = await Model.findOne({ _id: userId })
+
+    foundUser.experience = newExperience
+
+    const result = await foundUser.save()
+    return result
+}
+
+changeReward = async (userId, newCoint, newExperience) => {
+    const foundUser = await Model.findOne({ _id: userId })
+
+    foundUser.coint = newCoint
+    foundUser.experience = newExperience
+
+    const result = await foundUser.save()
+    return result
+}
 
 deleteUser = (idUser) => {
     return Model.deleteOne({
@@ -69,4 +97,7 @@ module.exports = {
     updateUser,
     updatePassword,
     deleteUser,
+    changeCoint,
+    changeExperience,
+    changeReward
 }

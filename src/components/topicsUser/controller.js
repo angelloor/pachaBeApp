@@ -1,16 +1,15 @@
 const store = require("./store")
 
-addTopicsUser = (userId, topics, status) => {
+addTopicsUser = (userId, topics) => {
     return new Promise((resolve, reject) => {
-        if (!userId || !topics || !status) {
+        if (!userId || !topics) {
             reject("No se ha recibido todos los datos")
             return false
         }
 
         const topicsUser = {
             userId,
-            topics,
-            status
+            topics
         }
 
         store.addTopicsUser(topicsUser)

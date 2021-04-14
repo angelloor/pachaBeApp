@@ -1,6 +1,7 @@
 const db = require('../../network/db')
 const ModelUser = require('../user/model')
 const ModelCourse = require('../course/model')
+const ModelTopicsUser = require('../topicsUser/model')
 const ModelFunFacts = require('../funFacts/model')
 const ModelFunFactsUser = require('../funFactsUser/model')
 const ModelChallenge = require('../challenge/model')
@@ -31,7 +32,8 @@ getData = async (emailUser) => {
 
     const populateItemStore = { path: 'itemId', select: 'title description urlImage' }
 
-    const yourShopping = await ModelYourShopping.find({ userId: user._id }).populate(populateItemStore)
+    let yourShopping
+    yourShopping = await ModelYourShopping.find({ userId: user._id }).populate(populateItemStore)
     {/* funFacts */ }
     const funFacts = await ModelFunFacts.find()
     const funFactsUser = await ModelFunFactsUser.find({ userId: user._id })
@@ -73,6 +75,13 @@ getData = async (emailUser) => {
 
     let populateCategory = { path: 'categoryId', select: 'colorPosition imageUrl' }
 
+    const topicsUser = await ModelTopicsUser.find({ userId: user._id })
+    let newArrayTipicsUser = []
+    topicsUser.map((item) => {
+        newArrayTipicsUser.push((item.topics).toString())
+    })
+    console.log(newArrayTipicsUser)
+
     if (edad < AGEMAXPUBLIC) {
         courses = await ModelCourse.find().populate(populateCategory)
 
@@ -80,6 +89,27 @@ getData = async (emailUser) => {
         let course = {}
         for (let i = 0; i < courses.length; i++) {
             topics = await ModelTopics.find({ courseId: courses[i]._id })
+
+            topics.map((itemTopic, index) => {
+
+                newArrayTipicsUser.map((itemTopicUser) => {
+                    if (itemTopic._id == itemTopicUser) {
+                        let element = topics[index]
+
+                        console.log(element)
+                        element = {
+                            ...element,
+                        }
+
+                        // contentGeneral[indexOne].topic.splice(indexTwo, 1)
+                        // contentGeneral[indexOne].topic.splice(indexTwo, 0, element)
+
+                        // console.log('son iguales')
+                    }
+                })
+            })
+
+            // console.log(topics)
             course = {
                 _id: courses[i]._id,
                 name: courses[i].name,
