@@ -2,6 +2,7 @@ const Model = require('./model')
 const db = require('../../network/db')
 const nowDate = require('../../utils/Date')
 const storeGetData = require('../getData/store')
+
 db.Connect()
 
 addUser = (user) => {

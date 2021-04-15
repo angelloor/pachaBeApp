@@ -90,26 +90,32 @@ getData = async (emailUser) => {
         for (let i = 0; i < courses.length; i++) {
             topics = await ModelTopics.find({ courseId: courses[i]._id })
 
+            {/* poner los isCompleted en cada topics de acuerdo a cada usuario*/ }
             topics.map((itemTopic, index) => {
 
                 newArrayTipicsUser.map((itemTopicUser) => {
                     if (itemTopic._id == itemTopicUser) {
                         let element = topics[index]
-
-                        console.log(element)
+                        console.log(`hay ${index + 1} temas que ya has completado`)
                         element = {
-                            ...element,
+                            reward: element.reward,
+                            content: element.content,
+                            answers: element.answers,
+                            isCompleted: true,
+                            _id: element._id,
+                            name: element.name,
+                            courseId: element.courseId,
+                            question: element.question,
+                            correctAnswer: element.correctAnswer,
+                            imageTopic: element.imageTopic
                         }
-
-                        // contentGeneral[indexOne].topic.splice(indexTwo, 1)
-                        // contentGeneral[indexOne].topic.splice(indexTwo, 0, element)
-
-                        // console.log('son iguales')
+                        topics.splice(index, 1)
+                        topics.splice(index, 0, element)
                     }
                 })
             })
 
-            // console.log(topics)
+            {/*    */ }
             course = {
                 _id: courses[i]._id,
                 name: courses[i].name,

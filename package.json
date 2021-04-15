@@ -4,7 +4,8 @@
 	"description": "BackEnd para el proyecto Pacha App",
 	"main": "index.js",
 	"scripts": {
-		"server": "nodemon src/server.js"
+		"server-development": "nodemon src/index.js",
+		"server-production": "nodemon dist/bundle.js"
 	},
 	"keywords": [
 		"Pachamana",
@@ -12,14 +13,41 @@
 		"Ambiental",
 		"Medio Ambiente"
 	],
+	"browser": {
+		"fs": false,
+		"path": false,
+		"os": false,
+		"stream": false,
+		"zlib": false
+	},
 	"author": "Angel Miguel Loor Manzano (@codersgt.ec)",
 	"license": "MIT",
 	"dependencies": {
+		"crypto": "^1.0.1",
 		"express": "^4.17.1",
+		"https": "^1.0.0",
 		"mongoose": "^5.12.0",
-		"nodemon": "^2.0.7"
+		"net": "^1.0.2",
+		"nodemon": "^2.0.7",
+		"zlib": "^1.0.5"
 	},
 	"devDependencies": {
-		"dotenv": "^8.2.0"
+		"babel-loader": "^8.2.2",
+		"browserify-zlib": "^0.2.0",
+		"buffer": "^6.0.3",
+		"crypto-browserify": "^3.12.0",
+		"dotenv": "^8.2.0",
+		"fs": "*",
+		"http": "*",
+		"path": "^0.12.7",
+		"path-browserify": "^1.0.1",
+		"stream": "^0.0.2",
+		"stream-browserify": "^3.0.0",
+		"stream-http": "^3.2.0",
+		"url": "^0.11.0",
+		"util": "^0.12.3",
+		"webpack": "^5.33.2",
+		"webpack-cli": "^4.6.0",
+		"webpack-node-externals": "^2.5.2"
 	}
 }
