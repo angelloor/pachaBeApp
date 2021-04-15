@@ -5,7 +5,8 @@
 	"main": "index.js",
 	"scripts": {
 		"server-development": "nodemon src/index.js",
-		"server-production": "nodemon dist/bundle.js"
+		"server-production": "nodemon dist/bundle.js",
+		"build": "npx webpack --mode production"
 	},
 	"keywords": [
 		"Pachamana",
