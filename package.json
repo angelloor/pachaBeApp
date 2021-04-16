@@ -33,6 +33,7 @@
 		"zlib": "^1.0.5"
 	},
 	"devDependencies": {
+		"@babel/core": "^7.13.15",
 		"babel-loader": "^8.2.2",
 		"browserify-zlib": "^0.2.0",
 		"buffer": "^6.0.3",
