@@ -2,6 +2,7 @@ const db = require('../../network/db')
 const ModelUser = require('../user/model')
 const ModelCourse = require('../course/model')
 const ModelTopicsUser = require('../topicsUser/model')
+const ModelChallengeUser = require('../challengeUser/model')
 const ModelFunFacts = require('../funFacts/model')
 const ModelFunFactsUser = require('../funFactsUser/model')
 const ModelChallenge = require('../challenge/model')
@@ -127,14 +128,25 @@ getData = async (emailUser) => {
             content.push(course)
         }
     } else {
+        const challengeUser = await ModelChallengeUser.find({ userId: user._id })
+        let newArrayChallengeUser = []
+        challengeUser.map((item) => {
+            newArrayChallengeUser.push((item.challengeId).toString())
+        })
+        // console.log(newArrayChallengeUser)
+
+        //traer todos los retos
         challenges = await ModelChallenge.find()
 
+        //sacar las categorias que de todos los retos
         const arrayCategory = []
         challenges.map((item) => {
             if (!(arrayCategory.includes((item.categoryId).toString()))) {
                 arrayCategory.push((item.categoryId).toString())
             }
         })
+
+        //construir las categorias con sus retos incluido 
         let element = {}
         for (let i = 0; i < arrayCategory.length; i++) {
 
@@ -145,14 +157,40 @@ getData = async (emailUser) => {
                 imageUrl: 1
             })
 
-            challengue = await ModelChallenge.find({ categoryId: arrayCategory[i] }).select({
+            challenge = await ModelChallenge.find({ categoryId: arrayCategory[i] }).select({
                 _id: 1,
                 name: 1,
                 description: 1,
                 shortDescription: 1,
                 ambientalImpact: 1,
-                reward: 1
+                reward: 1,
+                isCompleted: 1
             })
+
+            {/* poner los isCompleted en cada topics de acuerdo a cada usuario*/ }
+            let count = 0
+            challenge.map((itemChallenge, index) => {
+                newArrayChallengeUser.map((itemChallengeUser) => {
+                    if (itemChallenge._id == itemChallengeUser) {
+                        let element = challenge[index]
+                        count = count + 1
+                        element = {
+                            _id: element._id,
+                            name: element.name,
+                            description: element.description,
+                            shortDescription: element.shortDescription,
+                            ambientalImpact: element.ambientalImpact,
+                            reward: element.reward,
+                            isCompleted: true,
+                        }
+                        challenge.splice(index, 1)
+                        challenge.splice(index, 0, element)
+                    }
+                })
+            })
+            {/*    */ }
+            console.log(`hay ${count} temas que ya has completado`)
+
             element = {
                 _id: categoryChallenge[0]._id,
                 name: categoryChallenge[0].name,
@@ -160,7 +198,7 @@ getData = async (emailUser) => {
                     colorPosition: categoryChallenge[0].colorPosition,
                     imageUrl: categoryChallenge[0].imageUrl
                 },
-                challengue
+                challenge
             }
             content.push(element)
         }

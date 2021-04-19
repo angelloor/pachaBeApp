@@ -1,25 +1,29 @@
 const express = require('express')
-const https = require('https')
+// const https = require('https')
+const http = require('http')
 const fs = require('fs')
 const routes = require('./network/routes')
+const path = require("path")
 
 var app = express()
 
-const port = 443
+const port = 3000
 
 const credentials = {
-    cert: fs.readFileSync(__dirname + '/public.crt'),
-    key: fs.readFileSync(__dirname + '/private.key')
+    cert: fs.readFileSync(path.resolve("./public.crt")),
+    key: fs.readFileSync(path.resolve("./private.key"))
 }
 
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
-app.use('/src', express.static('./public'))
+app.use('/', express.static('./public'))
 routes(app)
 
-var httpsServer = https.createServer(credentials, app);
+// var httpsServer = https.createServer(credentials, app)
+var httpServer = http.createServer(app)
 
-httpsServer.listen(port)
+httpServer.listen(port)
+// httpsServer.listen(port)
 console.log(`La aplicación esta escuchando en https://localhost:${port}`)
 
 

@@ -32,6 +32,10 @@ const mySchema = new Schema({
     ambientalImpact: {
         type: String,
         required: true,
+    },
+    isCompleted: {
+        type: Boolean,
+        default: false,
     }
 }, { collection: 'challenge' })
 
