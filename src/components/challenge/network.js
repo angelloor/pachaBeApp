@@ -2,6 +2,7 @@ const express = require('express')
 const router = express.Router()
 const controller = require('./controller')
 const response = require('../../network/response')
+const upload = require('../../utils/storage')
 
 router.post('/', (req, res) => {
     controller.addChallenge(req.body.name, req.body.categoryId, req.body.description, req.body.reward, req.body.ambientalImpact)
@@ -11,6 +12,20 @@ router.post('/', (req, res) => {
         .catch(e => {
             response.error(req, res, 'Error Interno', 500, e)
         })
+})
+
+router.post('/saveImage', upload.array('image', 3), (req, res) => {
+    console.log('body', req.body);
+    res.status(200).json({
+        message: 'success!',
+    });
+    // controller.addChallenge(req.body.name, req.body.categoryId, req.body.description, req.body.reward, req.body.ambientalImpact)
+    //     .then((challenge) => {
+    //         response.success(req, res, challenge, 200)
+    //     })
+    //     .catch(e => {
+    //         response.error(req, res, 'Error Interno', 500, e)
+    //     })
 })
 
 router.get('/', (req, res) => {

@@ -24,7 +24,7 @@ var httpServer = http.createServer(app)
 
 httpServer.listen(port)
 // httpsServer.listen(port)
-console.log(`La aplicación esta escuchando en https://localhost:${port}`)
+console.log(`La aplicación esta escuchando en http://localhost:${port}`)
 
 
 
