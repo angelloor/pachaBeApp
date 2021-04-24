@@ -2,10 +2,10 @@ const multer = require('multer')
 
 var storage = multer.diskStorage({
     destination: function (req, file, cb) {
-        cb(null, 'pachaBeApp/')
+        cb(null, './public/img/challengeUser')
     },
     filename: function (req, file, cb) {
-        cb(null, file.fieldname)
+        cb(null, file.fieldname + '.jpg')
     }
 })
 
