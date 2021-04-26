@@ -4,8 +4,8 @@
 	"description": "BackEnd para el proyecto Pacha App",
 	"main": "index.js",
 	"scripts": {
-		"server-development": "nodemon src/index.js",
-		"server-production": "nodemon dist/bundle.js",
+		"server-dev": "nodemon src/index.js",
+		"server-pro": "nodemon dist/bundle.js",
 		"build": "npx webpack --mode production"
 	},
 	"keywords": [

@@ -2,9 +2,10 @@ const Model = require('./model')
 const db = require('../../network/db')
 db.Connect()
 
-addChallengeUser = (challengeUser) => {
+addChallengeUser = async (challengeUser) => {
     const myChallengeUser = new Model(challengeUser)
-    myChallengeUser.save()
+    const result = await myChallengeUser.save()
+    return result
 }
 
 getChallengeUser = async (filterChallengeUser) => {
@@ -34,9 +35,16 @@ deleteChallengeUser = (idChallengeUser) => {
     })
 }
 
+deleteChallengeUserByIdChallenge = (idChallengeUser) => {
+    return Model.deleteOne({
+        challengeId: idChallengeUser
+    })
+}
+
 module.exports = {
     addChallengeUser,
     getChallengeUser,
     updateChallengeUser,
-    deleteChallengeUser
+    deleteChallengeUser,
+    deleteChallengeUserByIdChallenge
 }

@@ -9,9 +9,16 @@ const { generateFolder, } = require('../../utils/generateFolder')
 router.post('/saveImage', upload.single('photoChallengue'), async (req, res) => {
     await generateFolder(req.body.idUser)
     await passImg(req.body.idUser, req.body.idChallenge)
-    res.status(200).json({
-        message: 'success!',
-    })
+
+    console.log(req.body)
+
+    controller.addChallengeUser(req.body.idUser, req.body.idChallenge, req.body.newCoint, req.body.newExperience)
+        .then((challenge) => {
+            response.success(req, res, challenge.message, 200)
+        })
+        .catch(e => {
+            response.error(req, res, e.message, 500, e)
+        })
 })
 
 router.post('/', (req, res) => {

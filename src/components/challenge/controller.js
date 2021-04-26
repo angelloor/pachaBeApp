@@ -1,5 +1,8 @@
 const store = require("./store")
 const LENGTHSHORTDESCRIPTION = 50
+const storeChallengueUser = require("../challengeUser/store")
+const storeUser = require("../user/store")
+const fs = require("fs")
 
 addChallenge = (name, categoryId, description, reward, ambientalImpact) => {
     return new Promise((resolve, reject) => {
@@ -70,9 +73,40 @@ deleteChallenge = (idChallenge) => {
     })
 }
 
+addChallengeUser = (idUser, idChallenge, newCoint, newExperience) => {
+    return new Promise(async (resolve, reject) => {
+        if (!idUser || !idChallenge || !newCoint || !newExperience) {
+            reject({ message: 'Error Interno, consulte al soporte' })
+            return false
+        }
+
+        const challengeUser = {
+            challengeId: idChallenge,
+            userId: idUser
+        }
+
+        const resultOne = await storeChallengueUser.addChallengeUser(challengeUser)
+
+        if (!resultOne) {
+            reject({ message: 'Ocurrió un error al guardar el reto' })
+        } else {
+            const resultTwo = await storeUser.changeReward(idUser, newCoint, newExperience)
+            if (!resultTwo) {
+                await storeChallengueUser.deleteChallengeUserByIdChallenge(idChallenge)
+                const path = `./public/img/challengeUser/${idUser}/${idChallenge}.jpg`
+                fs.unlinkSync(path)
+                reject({ message: 'Ocurrió un error al aumentar tu experiencia y AmbientalsCoints' })
+            } else {
+                resolve({ message: 'ok' })
+            }
+        }
+    })
+}
+
 module.exports = {
     addChallenge,
     getChallenge,
     updateChallenge,
-    deleteChallenge
+    deleteChallenge,
+    addChallengeUser
 }

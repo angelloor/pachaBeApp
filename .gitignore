@@ -2,9 +2,12 @@
 #
 .DS_Store
 .env
+private.key
+public.crt
 
 # Xcode
 #
+dist/
 build/
 *.pbxuser
 !default.pbxuser

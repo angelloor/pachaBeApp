@@ -1,0 +1,1758 @@
+{
+	"info": {
+		"_postman_id": "a43301cc-66b2-48a2-b81d-82491ddccfcb",
+		"name": "App",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Calendar",
+			"item": [
+				{
+					"name": "getCalendar",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/calendar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"calendar"
+							],
+							"query": [
+								{
+									"key": "idCalendar",
+									"value": "604eb5abdcb1bc2b2c61c0de",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteCalendar",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/calendar/604eb5abdcb1bc2b2c61c0de",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"calendar",
+								"604eb5abdcb1bc2b2c61c0de"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "addCalendar",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\t\"dayText\": \"5 de diciembre\",\r\n\t\t\"dayCelebrate\": \"05/12\",\r\n\t\t\"isCelebrated\": \"DÍA MUNDIAL DEL SUELO\",\r\n\t\t\"description\": \"Crear conciencia de la importancia de mantener los ecosistemas sanos y el bienestar humano abordando los crecientes desafíos de la ordenación del suelo\",\r\n\t\t\"categoryId\": \"6057ba031cc692537860ee2b\"\r\n\t}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/calendar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"calendar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateCalendar",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"dayText\": \"otro\",\r\n    \"dayCelebrate\": \"26/otro\",    \r\n    \"isCelebrated\": \"otro\",\r\n    \"description\": \"otroo en que se celebró en Belgrado, el Seminario Internacional de Educación Ambiental\",\r\n    \"categoryId\": \"604e805d2d01194618a1d7d1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/calendar/604eb7315cb1b53770aa8c35",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"calendar",
+								"604eb7315cb1b53770aa8c35"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Category",
+			"item": [
+				{
+					"name": "getCategory",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://localhost:443/category",
+							"protocol": "https",
+							"host": [
+								"localhost"
+							],
+							"port": "443",
+							"path": [
+								"category"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "dos",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteCategory",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/category/604e94696d67565784eda2f9",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"category",
+								"604e94696d67565784eda2f9"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "addCategory",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\t\"name\": \"Pastaza\",\r\n\t\t\"colorPosition\": [\"#ec3024\", \"#f8a41a\"],\r\n\t\t\"imageUrl\": \"/img/static/pastaza.png\"\r\n\t}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/category",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"category"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateCategory",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"tres\",\r\n    \"colorPosition\": [\r\n         \"#tres\", \"#tres\"\r\n    ],\r\n    \"imageUrl\": \"http://localhost:3000/src/img/tres.png\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/category/604e94696d67565784eda2f9",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"category",
+								"604e94696d67565784eda2f9"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "getUser",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "4C79A286C3ADE40D27696F617F94D646B7A38236FF385DF962EFAA9755BB2CBD",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"retos@gmail.com\",\r\n    \"password\": \"retos\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/user/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteUser",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/user/604ea358a6304e0e98bab778",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"604ea358a6304e0e98bab778"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "addUser",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "4C79A286C3ADE40D27696F617F94D646B7A38236FF385DF962EFAA9755BB2CBD",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"numberID\": \"1600744443\",\r\n\"names\": \"Angel Miguel Loor Manzano\",\r\n\"birdOfDate\": \"1996-10-06\",\r\n\"email\": \"miguelangelloor96@gmail.com\",\r\n\"phone\": \"0998679628\",\r\n\"password\": \"Sarita\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/user",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user"
+							],
+							"query": [
+								{
+									"key": "hola",
+									"value": "hola",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateUser",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"numberID\": \"1600744443\",\r\n\"names\": \"Angel Miguel Loor Manzano\",\r\n\"birdOfDate\": \"1996-10-06\",\r\n\"email\": \"miguelangelloor96@gmail.com\",\r\n\"phone\": \"0998679628\",\r\n\"password\": \"Sarita\",\r\n\"coint\": 100,\r\n\"experience\": 500,\r\n\"imageUrl\": \"hola.jpg\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/user/604ea358a6304e0e98bab778",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"604ea358a6304e0e98bab778"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "changePassword",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "4C79A286C3ADE40D27696F617F94D646B7A38236FF385DF962EFAA9755BB2CBD",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"user\": \"usuario1\",\r\n    \"passwordActually\": \"hola\",\r\n    \"passwordNew\": \"dos\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/user/changePassword",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"changePassword"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "changeCoint",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "4C79A286C3ADE40D27696F617F94D646B7A38236FF385DF962EFAA9755BB2CBD",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userId\": \"606cec49e18a6744806f58cf\",\r\n    \"newCoint\": 800\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/user/changeCoint",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"changeCoint"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "changeExperience",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "4C79A286C3ADE40D27696F617F94D646B7A38236FF385DF962EFAA9755BB2CBD",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userId\": \"606cec49e18a6744806f58cf\",\r\n    \"newExperience\": 1300\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/user/changeExperience",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"changeExperience"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "changeReward",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "4C79A286C3ADE40D27696F617F94D646B7A38236FF385DF962EFAA9755BB2CBD",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userId\": \"606cec49e18a6744806f58cf\",\r\n    \"newCoint\": 250,\r\n    \"newExperience\": 250\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/user/changeReward",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"changeReward"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Configuration",
+			"item": [
+				{
+					"name": "getConfiguration",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/configuration?idConfiguration=604ebe38f2278e06b014b924",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"configuration"
+							],
+							"query": [
+								{
+									"key": "idConfiguration",
+									"value": "604ebe38f2278e06b014b924"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteConfiguration",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/configuration/604ebe79fab348288ca51d5f",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"configuration",
+								"604ebe79fab348288ca51d5f"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "addConfiguration",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"dailyActivity\": 1,\r\n\"socialLinks\": {\r\n    \"facebook\": \"www.facebook.com\",\r\n    \"instagram\": \"www.instagram.com\"\r\n},\r\n\"Links\":{\r\n    \"privacyPolicies\": \"www.facebook.com\",\r\n    \"termsAndConditions\": \"www.facebook.com\",\r\n    \"suport\": \"www.facebook.com\"\r\n}\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/configuration",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"configuration"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateConfiguration",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"dailyActivity\": 1,\r\n\"socialLinks\": {\r\n    \"facebook\": \"www.ig.com\",\r\n    \"instagram\": \"www.ig.com\"\r\n},\r\n\"Links\":{\r\n    \"privacyPolicies\": \"www.ig.com\",\r\n    \"termsAndConditions\": \"www.ig.com\",\r\n    \"suport\": \"www.ig.com\"\r\n}\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/configuration/604ebe38f2278e06b014b924",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"configuration",
+								"604ebe38f2278e06b014b924"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "News",
+			"item": [
+				{
+					"name": "getNews",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/news",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"news"
+							],
+							"query": [
+								{
+									"key": "idNews",
+									"value": "604ff1f1f0ea6a51bce9bec0",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteNews",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/news/604ff1f1f0ea6a51bce9bec0",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"news",
+								"604ff1f1f0ea6a51bce9bec0"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "addNews",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Lanzan una campaña para combatir el tráfico de vida silvestre en Ecuador 5\",\r\n    \"description\": \"El programa de conservación ha sido emprendido por el ministerio conjuntamente con la Unidad de Protección del Medio Ambiente de la Policía (UPMA), el Sistema de Seguridad Ciudadana ECU-911, la Coordinadora de Medios Comunitarios Populares y Educativos del Ecuador (Corape), y el consorcio de fundaciones ambientalistas extranjeras Wildlife Conservation Society (WCS).El programa de conservación ha sido emprendido por el ministerio conjuntamente con la Unidad de Protección del Medio Ambiente de la Policía (UPMA), el Sistema de Seguridad Ciudadana ECU-911, la Coordinadora de Medios Comunitarios Populares y Educativos del Ecuador (Corape), y el consorcio de fundaciones ambientalistas extranjeras Wildlife Conservation Society (WCS).El programa de conservación ha sido emprendido por el ministerio conjuntamente con la Unidad de Protección del Medio Ambiente de la Policía (UPMA), el Sistema de Seguridad Ciudadana ECU-911, la Coordinadora de Medios Comunitarios Populares y Educativos del Ecuador (Corape), y el consorcio de fundaciones ambientalistas extranjeras Wildlife Conservation Society (WCS).El programa de conservación ha sido emprendido por el ministerio conjuntamente con la Unidad de Protección del Medio Ambiente de la Policía (UPMA), el Sistema de Seguridad Ciudadana ECU-911, la Coordinadora de Medios Comunitarios Populares y Educativos del Ecuador (Corape), y el consorcio de fundaciones ambientalistas extranjeras Wildlife Conservation Society (WCS).El programa de conservación ha sido emprendido por el ministerio conjuntamente con la Unidad de Protección del Medio Ambiente de la Policía (UPMA), el Sistema de Seguridad Ciudadana ECU-911, la Coordinadora de Medios Comunitarios Populares y Educativos del Ecuador (Corape), y el consorcio de fundaciones ambientalistas extranjeras Wildlife Conservation Society (WCS).El programa de conservación ha sido emprendido por el ministerio conjuntamente con la Unidad de Protección del Medio Ambiente de la Policía (UPMA), el Sistema de Seguridad Ciudadana ECU-911, la Coordinadora de Medios Comunitarios Populares y Educativos del Ecuador (Corape), y el consorcio de fundaciones ambientalistas extranjeras Wildlife Conservation Society (WCS).\",    \r\n    \"imageUrl\": \"/img/news/noticia1.jpg\",\r\n    \"nameButton\": \"Revisa tu facebook\",\r\n    \"linkButton\": \"https://www.facebook.com\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/news",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"news"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateNews",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"x\",\r\n    \"description\": \"cccccccccccccccccccccccccccccccccccccccccccqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq\",    \r\n    \"imageUrl\": \"x\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/news/604ff95f1293880274af5909",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"news",
+								"604ff95f1293880274af5909"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "storeItem",
+			"item": [
+				{
+					"name": "getNews",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/storeItem/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"storeItem",
+								""
+							],
+							"query": [
+								{
+									"key": "idStoreItem",
+									"value": "6050000607fdf135348ea045",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteNews",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/storeItem/6050005407fdf135348ea046",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"storeItem",
+								"6050005407fdf135348ea046"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "addNews",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\t\"title\": \"Pase Turistico\",\r\n\t\t\"description\": \"Pases de entrada gratis a centros turísticos de la provincia de Pastaza\",\r\n\t\t\"price\": 100,\r\n\t\t\"urlImage\": \"http://localhost:3000/src/img/premio2.jpg\"\r\n\t}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/storeItem",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"storeItem"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateNews",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"title\": \"X\",\r\n\"description\": \"X\",  \r\n\"price\": 10,\r\n\"urlImage\": \"X\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/storeItem/6050000607fdf135348ea045",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"storeItem",
+								"6050000607fdf135348ea045"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "yourShopping",
+			"item": [
+				{
+					"name": "getYourShopping",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/yourShopping",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"yourShopping"
+							],
+							"query": [
+								{
+									"key": "idYourShopping",
+									"value": "60500399df23ea5078bed795",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteYourShopping",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/yourShopping/60500399df23ea5078bed795",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"yourShopping",
+								"60500399df23ea5078bed795"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "addYourShopping",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"itemId\": \"6050000607fdf135348ea045\",\r\n    \"userId\": \"604ec35eeae6c51b3833986f\",\r\n    \"price\": 150    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/yourShopping",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"yourShopping"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateStatusYourShopping",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"dayText\": \"otro\",\r\n    \"dayCelebrate\": \"26/otro\",    \r\n    \"isCelebrated\": \"otro\",\r\n    \"description\": \"otroo en que se celebró en Belgrado, el Seminario Internacional de Educación Ambiental\",\r\n    \"categoryId\": \"604e805d2d01194618a1d7d1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/yourShopping/605011a2885e770fc4863a0a",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"yourShopping",
+								"605011a2885e770fc4863a0a"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "funFacts",
+			"item": [
+				{
+					"name": "getFunFacts",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/funFacts",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"funFacts"
+							],
+							"query": [
+								{
+									"key": "idFunFacts",
+									"value": "6050072320279136302e626f",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteFunFacts",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/funFacts/6050072320279136302e626f",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"funFacts",
+								"6050072320279136302e626f"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "addFunFacts",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\t\"content\": \"Se estima que cada año acaban en el océano unos 8 millones de toneladas de residuos plásticos, lo que convierten a este desecho en el residuo más común de los océanos\"\r\n\t}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/funFacts",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"funFacts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateFunFacts",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"content\": \"ya no soy\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/funFacts/6050072320279136302e626f",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"funFacts",
+								"6050072320279136302e626f"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "challenge",
+			"item": [
+				{
+					"name": "getChallenge",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/challenge",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"challenge"
+							],
+							"query": [
+								{
+									"key": "idChallenge",
+									"value": "60500b9336ba353f807e194b",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteChallenge",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/challenge/60500b9336ba353f807e194b",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"challenge",
+								"60500b9336ba353f807e194b"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "addChallenge",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\t\"name\": \"Disminuye la fuente\",\r\n\t\t\"categoryId\": \"60515b692e2f413804ffbf1c\",\r\n\t\t\"description\": \"Reduce el tamaño de letra de los documentos para aprovechar al máximo la cantidad de páginas que se van a imprimir. (Fotografía del documento con el texto impreso)\",\r\n\t\t\"reward\": {\r\n\t\t\t\"experiencie\": 100,\r\n\t\t\t\"coint\": 100\r\n\t\t},\r\n\t\t\"ambientalImpact\": \"Minimizas el consumo de resmas de papel bond\"\r\n\t}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/challenge",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"challenge"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateChallenge",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"x\",\r\n    \"categoryId\": \"604e805d2d01194618a1d7d1\",    \r\n    \"description\": \"x\",\r\n    \"reward\": {\r\n        \"experiencie\": 10,\r\n        \"coint\": 10\r\n    },\r\n    \"ambientalImpact\": \"x\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/challenge/60500b9336ba353f807e194b",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"challenge",
+								"60500b9336ba353f807e194b"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "saveImage",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "photoChallengue",
+									"type": "file",
+									"src": "/D:/Imagenes/Alienware/2.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://192.168.100.6:3000/challenge/saveImage",
+							"protocol": "http",
+							"host": [
+								"192",
+								"168",
+								"100",
+								"6"
+							],
+							"port": "3000",
+							"path": [
+								"challenge",
+								"saveImage"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "funFactsUser",
+			"item": [
+				{
+					"name": "getFunFactsUser",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/funFactsUser",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"funFactsUser"
+							],
+							"query": [
+								{
+									"key": "idFunFactsUser",
+									"value": "60500924523c9a1d643fcb56",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteFunFactsUser",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/funFactsUser/60500924523c9a1d643fcb56",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"funFactsUser",
+								"60500924523c9a1d643fcb56"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "addFunFactsUser",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"userId\": \"606cec49e18a6744806f58cf\",\r\n\"funFactsId\": \"6051614953ed452fb09c1e12\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/funFactsUser",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"funFactsUser"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateFunFactsUser",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"userId\": \"6050106336ecef31e44c198f\",\r\n\"funFactsId\": \"6050045e9856612f3c04d133\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/funFactsUser/60500924523c9a1d643fcb56",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"funFactsUser",
+								"60500924523c9a1d643fcb56"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "challengeUser",
+			"item": [
+				{
+					"name": "getChallengeUser",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/challengeUser?idChallengeUser=60510a4b32dc6d30cc5915db",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"challengeUser"
+							],
+							"query": [
+								{
+									"key": "idChallengeUser",
+									"value": "60510a4b32dc6d30cc5915db"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteChallengeUser",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/challengeUser/60510a9c1cc1442f8c5659b1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"challengeUser",
+								"60510a9c1cc1442f8c5659b1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "addChallengeUser",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"challengeId\": \"60500c2e632f0504dc13fa14\",\r\n    \"userId\": \"604ec35eeae6c51b3833986f\"   \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/challengeUser",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"challengeUser"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateChallengeUser",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"challengeId\": \"60510abe1cc1442f8c5659b2\",\r\n    \"userId\": \"6050106336ecef31e44c198f\"   \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/challengeUser/60510a4b32dc6d30cc5915db",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"challengeUser",
+								"60510a4b32dc6d30cc5915db"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "course",
+			"item": [
+				{
+					"name": "getCourse",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/course",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"course"
+							],
+							"query": [
+								{
+									"key": "idCourse",
+									"value": "60510e7ab1d621217877c926",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteCourse",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/course/60510f3f2070760d28123199",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"course",
+								"60510f3f2070760d28123199"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "addCourse",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\t\"name\": \"EL AIRE ES VIDA\",\r\n\t\t\"description\": \"La capa que envuelve la Tierra se llama atmósfera y está formada por aire, que es una mezcla de gases. Uno de los gases más importantes de la atmósfera es el oxígeno. Los seres vivos necesitamos respirar oxígeno para vivir\",\r\n\t\t\"categoryId\": \"60515b7c2e2f413804ffbf1f\"\r\n\t}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/course",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"course"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateCourse",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"aa\",\r\n    \"description\": \"aaaaa\",    \r\n    \"categoryId\": \"604e80fd9ef2f623801bd943\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/course/60510e7ab1d621217877c926",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"course",
+								"60510e7ab1d621217877c926"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "topics",
+			"item": [
+				{
+					"name": "getTopics",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/topics?idTopics=6051140c4c522d436894223d",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"topics"
+							],
+							"query": [
+								{
+									"key": "idTopics",
+									"value": "6051140c4c522d436894223d"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteTopics",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/topics/6051140c4c522d436894223d",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"topics",
+								"6051140c4c522d436894223d"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "addTopics",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"name\": \"OTRO TEMA\",\r\n\t\"content\": [\r\n\t\t\"\",\r\n\t\t\"\",\r\n\t\t\"\",\r\n        \"\"\r\n\t],\r\n\t\"courseId\": \"\",\r\n\t\"question\": \"¿En dónde se encuentra la capa de ozono?\",\r\n\t\"answers\": [\"\", \"2.59%\", \"\"],\r\n\t\"correctAnswer\": \"2.59%\",\r\n\t\"reward\": {\r\n\t\t\"experiencie\": 100,\r\n\t\t\"coint\": 100\r\n\t},\r\n    \"imageTopic\": \"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/topics",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"topics"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateTopics",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"AAAAAA\",\r\n    \"content\": [\"AAAAAA\", \"AAAAAA\",\"AAAAAA\",\"AAAAAA\"],    \r\n    \"courseId\": \"60510e7ab1d621217877c926\",\r\n    \"question\": \"AAAAAA\",\r\n    \"answers\": [\"AAAAAA\",\"AAAAAA\",\"AAAAAA\"],\r\n    \"correctAnswer\": \"AAAAAAA\",\r\n    \"reward\": {\r\n        \"experiencie\": 10,\r\n        \"coint\": 10\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/topics/6051140c4c522d436894223d",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"topics",
+								"6051140c4c522d436894223d"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "topicsUser",
+			"item": [
+				{
+					"name": "getTopicsUser",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/topicsUser?idTopicsUser=6057c567284b885730e9c3d4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"topicsUser"
+							],
+							"query": [
+								{
+									"key": "idTopicsUser",
+									"value": "6057c567284b885730e9c3d4"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteTopicsUser",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/topicsUser/6057c5a5284b885730e9c3d6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"topicsUser",
+								"6057c5a5284b885730e9c3d6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "addTopicsUser",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "4C79A286C3ADE40D27696F617F94D646B7A38236FF385DF962EFAA9755BB2CBD",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userId\": \"606cec49e18a6744806f58cf\",\r\n    \"topics\": \"6051689da86ad52510c284a3\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/topicsUser",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"topicsUser"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateTopicsUser",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userId\": \"6057851825d5862574cb25b8\",\r\n    \"topics\": \"6051688fa86ad52510c284a1\",\r\n    \"status\": \"true\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/topicsUser/6057c567284b885730e9c3d4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"topicsUser",
+								"6057c567284b885730e9c3d4"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "getData",
+			"item": [
+				{
+					"name": "getData",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"retos@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://172.18.2.3:3000/getData",
+							"protocol": "http",
+							"host": [
+								"172",
+								"18",
+								"2",
+								"3"
+							],
+							"port": "3000",
+							"path": [
+								"getData"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
