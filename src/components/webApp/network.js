@@ -7,18 +7,7 @@ const { passImgNew } = require('../../utils/generateFolder')
 const { addNews } = require('../news/controller')
 const { addStoreItem } = require('../storeItem/controller')
 
-router.post('/saveImageNew', uploadNew.single('image'), async (req, res) => {
-    const linkTemporal = "/"
-    addNews(req.body.title, req.body.description, linkTemporal, req.body.nameBtn, req.body.url)
-        .then((news) => {
-            passImgNew(news._id)
-            response.success(req, res, news, 200)
-        })
-        .catch(e => {
-            response.error(req, res, e, 500, e)
-        })
-})
-
+//Ingresar un usuario
 router.post('/', (req, res) => {
     if (req.headers.token != '4C79A286C3ADE40D27696F617F94D646B7A38236FF385DF962EFAA9755BB2CBD') {
         response.error(req, res, 'Acceso denegado', 500, 'La password de la req es incorrecta')
@@ -34,6 +23,7 @@ router.post('/', (req, res) => {
         })
 })
 
+//changePassword
 router.post('/changePassword', (req, res) => {
     if (req.headers.token != '4C79A286C3ADE40D27696F617F94D646B7A38236FF385DF962EFAA9755BB2CBD') {
         response.error(req, res, 'Acceso denegado', 500, 'La password de la req es incorrecta')
@@ -48,6 +38,7 @@ router.post('/changePassword', (req, res) => {
         })
 })
 
+//login
 router.post('/login', (req, res) => {
     if (req.headers.token != '4C79A286C3ADE40D27696F617F94D646B7A38236FF385DF962EFAA9755BB2CBD') {
         response.error(req, res, 'Acceso denegado', 500, 'La password de la req es incorrecta')
@@ -123,6 +114,20 @@ router.post('/returnDelivery', (req, res) => {
         })
 })
 
+//Guardar nueva noticia News
+router.post('/saveImageNew', uploadNew.single('image'), async (req, res) => {
+    const linkTemporal = "/"
+    addNews(req.body.title, req.body.description, linkTemporal, req.body.nameBtn, req.body.url)
+        .then((news) => {
+            passImgNew(news._id)
+            response.success(req, res, news, 200)
+        })
+        .catch(e => {
+            response.error(req, res, e, 500, e)
+        })
+})
+
+
 //guardar sin imagenes
 router.post('/saveSImage', (req, res) => {
     console.log(req.body)
@@ -148,7 +153,7 @@ router.post('/saveCImage', uploadNew.single('image'), async (req, res) => {
         })
 })
 
-//Store item
+//Guardar Store item
 router.post('/saveImageStoreItem', uploadStoreItem.single('image'), async (req, res) => {
     const linkTemporal = "/"
     console.log(req.body)

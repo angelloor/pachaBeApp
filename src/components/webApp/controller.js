@@ -92,8 +92,6 @@ getData = (idUser) => {
     })
 }
 
-
-
 delivery = (itemBuy) => {
     return new Promise(async (resolve, reject) => {
         if (!itemBuy) {
@@ -163,7 +161,6 @@ updateNewsSI = (id, title, description, nameBtn, url) => {
         resolve(newNews)
     })
 }
-
 
 updateNewsCI = (id, title, description, nameBtn, url) => {
     return new Promise(async (resolve, reject) => {
@@ -238,7 +235,6 @@ updateNewsCIStoreItem = (id, name, description, price) => {
         resolve({ newStoreItem, id })
     })
 }
-
 
 module.exports = {
     addUser,

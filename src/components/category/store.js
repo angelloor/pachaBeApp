@@ -19,7 +19,7 @@ getCategory = async (filterCategory) => {
 updateCategory = async (id, name, colorPosition, imageUrl) => {
     const foundCategory = await Model.findOne({
         _id: id
-    });
+    })
 
     foundCategory.name = name
     foundCategory.colorPosition = colorPosition

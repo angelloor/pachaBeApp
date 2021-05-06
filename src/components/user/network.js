@@ -35,6 +35,7 @@ router.post('/login', (req, res) => {
         response.error(req, res, 'Se necesita que se envie el correo y contraseña', 500, 'No se ha recibido las credenciales')
         return
     }
+
     controllerUser.loginUser(email, password)
         .then((user) => {
             response.success(req, res, user, 200)
@@ -43,7 +44,6 @@ router.post('/login', (req, res) => {
             response.error(req, res, err, 500, err)
         })
 })
-
 
 router.post('/changePassword', (req, res) => {
     const { user, passwordActually, passwordNew } = req.body
@@ -61,10 +61,9 @@ router.post('/changePassword', (req, res) => {
         })
         .catch(err => {
             response.error(req, res, err, 500, err)
-            console.log('por aqui');
+            console.log('por aqui')
         })
 })
-
 
 router.post('/changeCoint', (req, res) => {
     const { userId, newCoint } = req.body
@@ -82,7 +81,7 @@ router.post('/changeCoint', (req, res) => {
         })
         .catch(err => {
             response.error(req, res, err, 500, err)
-            console.log('por aqui');
+            console.log('por aqui')
         })
 })
 
@@ -102,7 +101,7 @@ router.post('/changeExperience', (req, res) => {
         })
         .catch(err => {
             response.error(req, res, err, 500, err)
-            console.log('por aqui');
+            console.log('por aqui')
         })
 })
 
@@ -122,10 +121,9 @@ router.post('/changeReward', (req, res) => {
         })
         .catch(err => {
             response.error(req, res, err, 500, err)
-            console.log('por aqui');
+            console.log('por aqui')
         })
 })
-
 
 router.patch('/:id', (req, res) => {
     controllerUser.updateUser(

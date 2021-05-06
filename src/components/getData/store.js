@@ -54,7 +54,7 @@ getData = async (emailUser) => {
             newArayFunFactsUser.push((item.funFactsId).toString())
         })
 
-        var result = newArayFunFacts.filter(element => !newArayFunFactsUser.includes(element));
+        var result = newArayFunFacts.filter(element => !newArayFunFactsUser.includes(element))
         const cantidaElementosArray = result.length
 
         console.log(`solo me quedan ${cantidaElementosArray} funfact para mostrar`)
@@ -137,8 +137,6 @@ getData = async (emailUser) => {
             challengeUser.map((item) => {
                 newArrayChallengeUser.push((item.challengeId).toString())
             })
-            // console.log(newArrayChallengeUser)
-
             //traer todos los retos
             challenges = await ModelChallenge.find()
 
@@ -238,7 +236,7 @@ getData = async (emailUser) => {
 }
 
 getRandomInt = (min, max) => {
-    return Math.floor(Math.random() * (max - min)) + min;
+    return Math.floor(Math.random() * (max - min)) + min
 }
 
 module.exports = {

@@ -11,7 +11,7 @@ addUser = (numberID, names, birdOfDate, email, phone, password) => {
 
         filter = { email: email }
         const userFilter = await Model.find(filter)
-        console.log(userFilter.length);
+        console.log(userFilter.length)
         if (userFilter.length >= 1) {
             reject("El usuario existente")
             return
@@ -69,7 +69,7 @@ changePassword = (user, passwordActually, passwordNew) => {
 changeCoint = (userId, newCoint) => {
     return new Promise(async (resolve, reject) => {
         const userConsulted = await Model.findOne({ _id: userId })
-        console.log(userConsulted);
+        console.log(userConsulted)
         if (!userConsulted) {
             reject('El usuario no existe')
             return

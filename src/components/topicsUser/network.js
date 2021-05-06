@@ -22,7 +22,6 @@ router.get('/', (req, res) => {
         .catch(e => {
             response.error(req, res, 'Error Interno', 500, e)
         })
-
 })
 
 router.patch('/:id', (req, res) => {

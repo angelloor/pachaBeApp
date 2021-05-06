@@ -28,7 +28,6 @@ getData = async (email) => {
     return data
 }
 
-
 get = async (emailUser) => {
     return new Promise(async (resolve, reject) => {
         if (emailUser != null) {
