@@ -129,7 +129,6 @@ getData = async (emailUser) => {
                     categoryId: courses[i].categoryId,
                     topic: topics
                 }
-
                 content.push(course)
             }
         } else {

@@ -3,14 +3,12 @@ const LENGTHSHORTDESCRIPTION = 50
 const nowDate = require('../../utils/Date')
 
 addNews = (title, description, imageUrl, nameButton, linkButton) => {
-    return new Promise((resolve, reject) => {
+    return new Promise(async (resolve, reject) => {
         if (!title || !description || !imageUrl) {
             reject("No se ha recibido todos los datos")
             return false
         }
         const date = nowDate.getFullDate()
-
-        console.log(date)
 
         let shortDescription = description.slice(0, 49)
 
@@ -28,8 +26,11 @@ addNews = (title, description, imageUrl, nameButton, linkButton) => {
             linkButton
         }
 
-        store.addNews(news)
-        resolve(news)
+        await store.addNews(news)
+
+        const r = await store.updateUrl(date)
+
+        resolve(r)
     })
 }
 

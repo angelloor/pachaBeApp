@@ -2,11 +2,10 @@ const express = require('express')
 const router = express.Router()
 const controller = require('./controller')
 const response = require('../../network/response')
-const upload = require('../../utils/storage')
-const fs = require('fs')
-const { generateFolder, } = require('../../utils/generateFolder')
+const { uploadChallengeUser } = require('../../utils/storage')
+const { generateFolder, passImg } = require('../../utils/generateFolder')
 
-router.post('/saveImage', upload.single('photoChallengue'), async (req, res) => {
+router.post('/saveImage', uploadChallengeUser.single('photoChallengue'), async (req, res) => {
     await generateFolder(req.body.idUser)
     await passImg(req.body.idUser, req.body.idChallenge)
 

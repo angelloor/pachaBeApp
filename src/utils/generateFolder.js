@@ -18,7 +18,32 @@ passImg = async (IdUser, idChallenge) => {
     })
 }
 
+passImgNew = async (name) => {
+    const oldPath = `./public/img/news/image.jpg`
+    const pathDestination = `./public/img/news/${name}.jpg`
+
+    fs.rename(oldPath, pathDestination, (err) => {
+        if (err) {
+            console.log(err)
+        }
+    })
+}
+
+passImgStoreItem = async (name) => {
+    const oldPath = `./public/img/storeItem/image.jpg`
+    const pathDestination = `./public/img/storeItem/${name}.jpg`
+
+    fs.rename(oldPath, pathDestination, (err) => {
+        if (err) {
+            console.log(err)
+        }
+    })
+}
+
+
 module.exports = {
     generateFolder,
-    passImg
+    passImg,
+    passImgNew,
+    passImgStoreItem
 }

@@ -9,6 +9,7 @@ exports.error = (req, res, error, status, details) => {
     console.error('[reponse error] ', details)
     res.status(status || 500).send({
         error: error,
-        body: ''
+        body: '',
+        status: status
     });
 }

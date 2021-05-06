@@ -13,7 +13,7 @@ const course = require('../components/course/network')
 const topics = require('../components/topics/network')
 const topicsUser = require('../components/topicsUser/network')
 const getData = require('../components/getData/network')
-
+const webApp = require('../components/webApp/network')
 
 const routes = (app) => {
     app.use('/category', category)
@@ -31,6 +31,11 @@ const routes = (app) => {
     app.use('/topics', topics)
     app.use('/topicsUser', topicsUser)
     app.use('/getData', getData)
+
+    //webApp
+    app.use('/webApp', webApp)
+
+
 }
 
 module.exports = routes

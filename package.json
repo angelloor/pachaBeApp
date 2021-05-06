@@ -24,6 +24,7 @@
 	"author": "Angel Miguel Loor Manzano (@codersgt.ec)",
 	"license": "MIT",
 	"dependencies": {
+		"cors": "^2.8.5",
 		"crypto": "^1.0.1",
 		"express": "^4.17.1",
 		"https": "^1.0.0",

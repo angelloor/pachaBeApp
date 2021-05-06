@@ -12,7 +12,8 @@ getNews = async (filterNews) => {
     if (filterNews != null) {
         filter = { _id: filterNews }
     }
-    const news = await Model.find(filter)
+
+    const news = await Model.find(filter).sort([['datePublished', -1]])
     return news
 }
 
@@ -37,9 +38,21 @@ deleteNews = (idNews) => {
     })
 }
 
+updateUrl = async (date) => {
+    const foundNews = await Model.findOne({
+        datePublished: date
+    })
+
+    foundNews.imageUrl = `/img/news/${foundNews._id}.jpg`
+
+    const newNews = await foundNews.save()
+    return newNews
+}
+
 module.exports = {
     addNews,
     getNews,
     updateNews,
-    deleteNews
+    deleteNews,
+    updateUrl
 }

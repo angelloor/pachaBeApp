@@ -10,12 +10,12 @@ addStoreItem = (title, description, price, urlImage) => {
         const storeItem = {
             title,
             description,
-            price,
+            price: parseInt(price),
             urlImage,
         }
 
-        store.addStoreItem(storeItem)
-        resolve(storeItem)
+        const item = store.addStoreItem(storeItem)
+        resolve(item)
     })
 
 }

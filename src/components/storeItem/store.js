@@ -2,9 +2,10 @@ const Model = require('./model')
 const db = require('../../network/db')
 db.Connect()
 
-addStoreItem = (storeItem) => {
+addStoreItem = async (storeItem) => {
     const myStoreItem = new Model(storeItem)
-    myStoreItem.save()
+    const response = await myStoreItem.save()
+    return response
 }
 
 getStoreItem = async (filterStoreItem) => {
