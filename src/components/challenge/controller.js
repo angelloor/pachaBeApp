@@ -82,7 +82,8 @@ addChallengeUser = (idUser, idChallenge, newCoint, newExperience) => {
 
         const challengeUser = {
             challengeId: idChallenge,
-            userId: idUser
+            userId: idUser,
+            imageUrl: `/img/challengeUser/${idUser}/${idChallenge}.jpg`
         }
 
         const resultOne = await storeChallengueUser.addChallengeUser(challengeUser)

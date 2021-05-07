@@ -36,9 +36,21 @@ deleteStoreItem = (idStoreItem) => {
     })
 }
 
+updateUrl = async (url) => {
+    const foundStoreItem = await Model.findOne({
+        urlImage: url
+    })
+
+    foundStoreItem.urlImage = `/img/storeItem/${foundStoreItem._id}.jpg`
+
+    const newStoreItem = await foundStoreItem.save()
+    return newStoreItem
+}
+
 module.exports = {
     addStoreItem,
     getStoreItem,
     updateStoreItem,
-    deleteStoreItem
+    deleteStoreItem,
+    updateUrl
 }

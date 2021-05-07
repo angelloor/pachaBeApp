@@ -142,7 +142,7 @@ updateNewsSI = (id, title, description, nameBtn, url) => {
             _id: id
         })
 
-        const date = nowDate.getDate()
+        const date = nowDate.getFullDate()
 
         let shortDescription = description.slice(0, 49)
 
@@ -173,7 +173,7 @@ updateNewsCI = (id, title, description, nameBtn, url) => {
             _id: id
         })
 
-        const date = nowDate.getDate()
+        const date = nowDate.getFullDate()
 
         let shortDescription = description.slice(0, 49)
 

@@ -1,7 +1,8 @@
 const store = require("./store")
+const ModelYourShopping = require("../yourShopping/model")
 
 addStoreItem = (title, description, price, urlImage) => {
-    return new Promise((resolve, reject) => {
+    return new Promise(async (resolve, reject) => {
         if (!title || !description || !price || !urlImage) {
             reject("No se ha recibido todos los datos")
             return false
@@ -14,8 +15,11 @@ addStoreItem = (title, description, price, urlImage) => {
             urlImage,
         }
 
-        const item = store.addStoreItem(storeItem)
-        resolve(item)
+        await store.addStoreItem(storeItem)
+
+        const r = await store.updateUrl(urlImage)
+
+        resolve(r)
     })
 
 }
@@ -39,15 +43,22 @@ updateStoreItem = (idStoreItem, title, description, price, urlImage) => {
 }
 
 deleteStoreItem = (idStoreItem) => {
-    return new Promise((resolve, reject) => {
+    return new Promise(async (resolve, reject) => {
         if (!idStoreItem) {
-            reject("No se ha encontrado la categoria")
+            resolve("No se ha encontrado el store Item")
+            return false
+        }
+
+        const itemExiste = await ModelYourShopping.findOne({ itemId: idStoreItem })
+
+        if (itemExiste) {
+            resolve("No se puede eliminar el Item, los usuarios ya han realizado compras con este Item.")
             return false
         }
 
         store.deleteStoreItem(idStoreItem)
             .then(() => {
-                resolve()
+                resolve('item eliminado correctamente')
             })
             .catch(err => {
                 reject(err)

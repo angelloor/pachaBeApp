@@ -38,11 +38,11 @@ router.patch('/:id', (req, res) => {
 router.delete('/:id', (req, res) => {
     let idStoreItem = req.params.id
     controller.deleteStoreItem(idStoreItem)
-        .then(() => {
-            response.success(req, res, `storeItem ${idStoreItem} Eliminado`, 200)
+        .then((r) => {
+            response.success(req, res, r, 200)
         })
         .catch((err) => {
-            response.error(req, res, 'Error Interno', 500, err)
+            response.error(req, res, err, 500, err)
         })
 })
 
