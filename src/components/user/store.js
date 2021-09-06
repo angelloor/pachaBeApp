@@ -14,7 +14,6 @@ loginUser = async (email, password) => {
     let statusLogin = false
     const user = await Model.findOne({ email: email })
     let data = {}
-    console.log(user)
     if (!user) {
         return statusLogin
     }

@@ -9,8 +9,6 @@ router.post('/saveImage', uploadChallengeUser.single('photoChallengue'), async (
     await generateFolder(req.body.idUser)
     await passImg(req.body.idUser, req.body.idChallenge)
 
-    console.log(req.body)
-
     controller.addChallengeUser(req.body.idUser, req.body.idChallenge, req.body.newCoint, req.body.newExperience)
         .then((challenge) => {
             response.success(req, res, challenge.message, 200)

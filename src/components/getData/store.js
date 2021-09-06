@@ -57,7 +57,7 @@ getData = async (emailUser) => {
         var result = newArayFunFacts.filter(element => !newArayFunFactsUser.includes(element))
         const cantidaElementosArray = result.length
 
-        console.log(`solo me quedan ${cantidaElementosArray} funfact para mostrar`)
+        // console.log(`solo me quedan ${cantidaElementosArray} funfact para mostrar`)
 
         let positionElement
         let funFactsFinal
@@ -86,7 +86,6 @@ getData = async (emailUser) => {
         topicsUser.map((item) => {
             newArrayTipicsUser.push((item.topics).toString())
         })
-        console.log(newArrayTipicsUser)
 
         if (edad < AGEMAXPUBLIC) {
             courses = await ModelCourse.find().populate(populateCategory)
@@ -102,7 +101,7 @@ getData = async (emailUser) => {
                     newArrayTipicsUser.map((itemTopicUser) => {
                         if (itemTopic._id == itemTopicUser) {
                             let element = topics[index]
-                            console.log(`hay ${index + 1} temas que ya has completado`)
+                            // console.log(`hay ${index + 1} temas que ya has completado`)
                             element = {
                                 reward: element.reward,
                                 content: element.content,
@@ -191,7 +190,7 @@ getData = async (emailUser) => {
                     })
                 })
                 {/*    */ }
-                console.log(`hay ${count} temas que ya has completado`)
+                // console.log(`hay ${count} temas que ya has completado`)
 
                 element = {
                     _id: categoryChallenge[0]._id,

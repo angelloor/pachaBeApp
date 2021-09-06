@@ -61,7 +61,6 @@ router.post('/changePassword', (req, res) => {
         })
         .catch(err => {
             response.error(req, res, err, 500, err)
-            console.log('por aqui')
         })
 })
 
@@ -81,7 +80,6 @@ router.post('/changeCoint', (req, res) => {
         })
         .catch(err => {
             response.error(req, res, err, 500, err)
-            console.log('por aqui')
         })
 })
 
@@ -101,7 +99,6 @@ router.post('/changeExperience', (req, res) => {
         })
         .catch(err => {
             response.error(req, res, err, 500, err)
-            console.log('por aqui')
         })
 })
 
@@ -121,7 +118,6 @@ router.post('/changeReward', (req, res) => {
         })
         .catch(err => {
             response.error(req, res, err, 500, err)
-            console.log('por aqui')
         })
 })
 

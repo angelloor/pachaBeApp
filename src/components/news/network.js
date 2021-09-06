@@ -13,7 +13,7 @@ router.post('/', (req, res) => {
         })
 })
 
-router.get('/', (req, res) => {
+router.post('/listNews', (req, res) => {
     const filterNews = req.query.idNews || null
     controller.getNews(filterNews)
         .then((news) => {

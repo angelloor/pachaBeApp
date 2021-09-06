@@ -26,8 +26,6 @@ addYourShopping = (itemId, userId, price) => {
 
         const updateCount = await userFind.save()
 
-        console.log(updateCount)
-
         store.addYourShopping(yourShopping)
         resolve(yourShopping)
     })

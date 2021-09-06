@@ -38,9 +38,9 @@ deleteNews = (idNews) => {
     })
 }
 
-updateUrl = async (date) => {
+updateUrl = async (imageUrl) => {
     const foundNews = await Model.findOne({
-        datePublished: date
+        imageUrl: imageUrl
     })
 
     foundNews.imageUrl = `/img/news/${foundNews._id}.jpg`

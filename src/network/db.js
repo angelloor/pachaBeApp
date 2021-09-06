@@ -1,7 +1,8 @@
 const db = require('mongoose')
 
 const Connect = () => {
-    let connectStr = `mongodb://localhost:27017/pachaapp`
+    // let connectStr = `mongodb://admin:Pachaapp2021_mongo@localhost:27017/pachaapp?authSource=admin&readPreference=primary&appname=MongoDB%20Compass&ssl=false`
+    let connectStr = `mongodb://admin:Pachaapp2021_mongo@localhost:27017/pachaapp?authSource=admin&readPreference=primary&appname=MongoDB%20Compass&ssl=false`
 
     try {
         db.Promise = global.Promise

@@ -13,7 +13,7 @@ router.post('/', (req, res) => {
         })
 })
 
-router.get('/', (req, res) => {
+router.post('/listStoreItem', (req, res) => {
     const filterStoreItem = req.query.idStoreItem || null
     controller.getStoreItem(filterStoreItem)
         .then((storeItem) => {

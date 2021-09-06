@@ -1,5 +1,6 @@
 const store = require("./store")
 const ModelYourShopping = require("../yourShopping/model")
+const fs = require('fs')
 
 addStoreItem = (title, description, price, urlImage) => {
     return new Promise(async (resolve, reject) => {
@@ -55,6 +56,9 @@ deleteStoreItem = (idStoreItem) => {
             resolve("No se puede eliminar el Item, los usuarios ya han realizado compras con este Item.")
             return false
         }
+
+        let path = `./public/img/storeItem/${idStoreItem}.jpg`
+        fs.unlinkSync(path)
 
         store.deleteStoreItem(idStoreItem)
             .then(() => {

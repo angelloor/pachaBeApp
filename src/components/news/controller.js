@@ -1,6 +1,7 @@
 const store = require("./store")
 const LENGTHSHORTDESCRIPTION = 50
 const nowDate = require('../../utils/Date')
+const fs = require('fs')
 
 addNews = (title, description, imageUrl, nameButton, linkButton) => {
     return new Promise(async (resolve, reject) => {
@@ -28,7 +29,7 @@ addNews = (title, description, imageUrl, nameButton, linkButton) => {
 
         await store.addNews(news)
 
-        const r = await store.updateUrl(date)
+        const r = await store.updateUrl(imageUrl)
 
         resolve(r)
     })
@@ -66,6 +67,9 @@ deleteNews = (idNews) => {
             reject("No se ha encontrado la categoria")
             return false
         }
+
+        let path = `./public/img/news/${idNews}.jpg`
+        fs.unlinkSync(path)
 
         store.deleteNews(idNews)
             .then(() => {

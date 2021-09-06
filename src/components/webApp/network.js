@@ -54,7 +54,7 @@ router.post('/login', (req, res) => {
 })
 
 //Listar los usuarios
-router.get('/listUsers', (req, res) => {
+router.post('/listUsers', (req, res) => {
     if (req.headers.token != '4C79A286C3ADE40D27696F617F94D646B7A38236FF385DF962EFAA9755BB2CBD') {
         response.error(req, res, 'Acceso denegado', 500, 'La password de la req es incorrecta')
         return
@@ -130,7 +130,6 @@ router.post('/saveImageNew', uploadNew.single('image'), async (req, res) => {
 
 //guardar sin imagenes
 router.post('/saveSImage', (req, res) => {
-    console.log(req.body)
     controllerUser.updateNewsSI(req.body.id, req.body.title, req.body.description, req.body.nameBtn, req.body.url)
         .then((news) => {
             response.success(req, res, news, 200)
@@ -156,10 +155,8 @@ router.post('/saveCImage', uploadNew.single('image'), async (req, res) => {
 //Guardar Store item
 router.post('/saveImageStoreItem', uploadStoreItem.single('image'), async (req, res) => {
     const linkTemporal = "/"
-    console.log(req.body)
     addStoreItem(req.body.name, req.body.description, req.body.price, linkTemporal)
         .then((storeItem) => {
-            console.log(storeItem)
             passImgStoreItem(storeItem._id)
             response.success(req, res, storeItem, 200)
         })
@@ -170,7 +167,6 @@ router.post('/saveImageStoreItem', uploadStoreItem.single('image'), async (req, 
 
 //guardar sin imagenes StoreItem
 router.post('/saveSImageStoreItem', (req, res) => {
-    console.log(req.body)
     controllerUser.updateNewsSIStoreItem(req.body.id, req.body.name, req.body.description, req.body.price)
         .then((news) => {
             response.success(req, res, news, 200)

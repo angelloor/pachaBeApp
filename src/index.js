@@ -20,6 +20,15 @@ if (process.env.NODE_ENV == 'production') {
     app.use(cors())
     app.use(express.urlencoded({ extended: false }))
     app.use('/', express.static('./public'))
+
+    app.get('/*', (req, res) => {
+        res.sendFile(path.join(path.resolve('./'), 'public/index.html'), (err) => {
+            if (err) {
+                res.status(500).send(err)
+            }
+        })
+    })
+
     routes(app)
 
     var httpsServer = https.createServer(credentials, app)
@@ -35,6 +44,15 @@ if (process.env.NODE_ENV == 'production') {
     app.use(cors())
     app.use(express.urlencoded({ extended: false }))
     app.use('/', express.static('./public'))
+
+    app.get('/*', (req, res) => {
+        res.sendFile(path.join(path.resolve('./'), 'public/index.html'), (err) => {
+            if (err) {
+                res.status(500).send(err)
+            }
+        })
+    })
+
     routes(app)
 
     var httpServer = http.createServer(app)
